@@ -1,0 +1,22 @@
+PODS:
+  - Alamofire (4.5.1)
+  - Charts (3.0.4):
+    - Charts/Core (= 3.0.4)
+  - Charts/Core (3.0.4)
+  - NVActivityIndicatorView (4.0.0):
+    - NVActivityIndicatorView/Presenter (= 4.0.0)
+  - NVActivityIndicatorView/Presenter (4.0.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.5)
+  - Charts
+  - NVActivityIndicatorView
+
+SPEC CHECKSUMS:
+  Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
+  Charts: 0705898046257443f0afbbc3179f4b67507b6e48
+  NVActivityIndicatorView: 54c9b93b6f25a4f467512680c0c90c09a1095cf2
+
+PODFILE CHECKSUM: 862c9bc9fb1df4f98e15e6fc9382a5be5628f01f
+
+COCOAPODS: 1.2.0
