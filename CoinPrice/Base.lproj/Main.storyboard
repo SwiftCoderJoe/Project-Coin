@@ -113,7 +113,7 @@
                                 <rect key="frame" x="0.0" y="216" width="375" height="562"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$9,237.07" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="23" translatesAutoresizingMaskIntoConstraints="NO" id="2wb-Vu-JqL">
-                                        <rect key="frame" x="40" y="10" width="295" height="78"/>
+                                        <rect key="frame" x="57" y="10" width="261.33333333333331" height="78"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="57"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -123,7 +123,7 @@
                                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="Z8X-Ht-q8M"/>
-                                            <constraint firstAttribute="width" constant="50" id="ucy-i4-Wa4"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="ucy-i4-Wa4"/>
                                         </constraints>
                                         <state key="normal" title="USD">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -142,12 +142,11 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="p7I-cU-zBw" secondAttribute="trailing" id="0ca-RA-ON4"/>
-                                    <constraint firstAttribute="trailing" secondItem="2wb-Vu-JqL" secondAttribute="trailing" constant="40" id="870-IQ-9JX"/>
-                                    <constraint firstItem="2wb-Vu-JqL" firstAttribute="leading" secondItem="Qev-XX-UPJ" secondAttribute="leading" constant="40" id="9fM-dm-Xuy"/>
                                     <constraint firstItem="V5q-2d-qpc" firstAttribute="top" secondItem="2wb-Vu-JqL" secondAttribute="bottom" id="AiO-ss-cvh"/>
                                     <constraint firstAttribute="bottom" secondItem="p7I-cU-zBw" secondAttribute="bottom" id="NZd-G7-MIa"/>
                                     <constraint firstItem="p7I-cU-zBw" firstAttribute="leading" secondItem="Qev-XX-UPJ" secondAttribute="leading" id="SVQ-aH-kiI"/>
                                     <constraint firstItem="p7I-cU-zBw" firstAttribute="top" secondItem="V5q-2d-qpc" secondAttribute="bottom" constant="10" id="fZH-EH-1nh"/>
+                                    <constraint firstItem="2wb-Vu-JqL" firstAttribute="centerX" secondItem="Qev-XX-UPJ" secondAttribute="centerX" id="pc7-ME-Hdc"/>
                                     <constraint firstItem="2wb-Vu-JqL" firstAttribute="top" secondItem="Qev-XX-UPJ" secondAttribute="top" constant="10" id="w3e-jj-n2x"/>
                                     <constraint firstItem="V5q-2d-qpc" firstAttribute="centerX" secondItem="Qev-XX-UPJ" secondAttribute="centerX" id="yZ9-5c-tWU"/>
                                 </constraints>
