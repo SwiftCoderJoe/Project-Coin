@@ -10,6 +10,9 @@ target 'CoinPrice' do
   pod 'Alamofire', '~> 4.5'
 
   pod 'Charts'
+  
+  pod 'IQKeyboardManagerSwift'
+  
   target 'CoinPriceTests' do
     inherit! :search_paths
   end
