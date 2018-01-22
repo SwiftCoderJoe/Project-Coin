@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		330F104919F2A13B4615501B /* Pods_CoinPrice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F46A0C0A9834C4BCA9C2DC2 /* Pods_CoinPrice.framework */; settings = {ATTRIBUTES = (Required, ); }; };
-		47672AAC9530192EEFE50D97 /* Pods_CoinPriceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4F1DA161FCCB08500B07419 /* Pods_CoinPriceTests.framework */; };
 		D44758761FC503E000F66BA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44758751FC503E000F66BA3 /* AppDelegate.swift */; };
 		D447587B1FC503E000F66BA3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D44758791FC503E000F66BA3 /* Main.storyboard */; };
 		D447587D1FC503E000F66BA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D447587C1FC503E000F66BA3 /* Assets.xcassets */; };
@@ -65,7 +64,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9F7D5BE2EA5D6BC8BF9197E /* Pods_CoinPriceTests.framework in Frameworks */,
-				47672AAC9530192EEFE50D97 /* Pods_CoinPriceTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

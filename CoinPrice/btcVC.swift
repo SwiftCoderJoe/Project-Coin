@@ -1,5 +1,6 @@
 import UIKit
 import Charts
+import Alamofire
 import NVActivityIndicatorView
 
 class btcVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
@@ -8,14 +9,24 @@ class btcVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     
     let bitcoinHistory: [Double] = [8000, 8200, 8500, 8700, 9200, 9237]
-    private let currencies = ["USD", "EUR", "JPY"]
+    typealias DownloadComplete = () -> ()
+    private var currBtnPressed:String = ""
+    private var btcPrice: Double = -1
+    private let currencies = ["USD", "EUR", "GBP"]
+    let todaysDate:NSDate = NSDate()
     
     
     /* IBOutlets */
     
     
+    @IBOutlet weak var btcPriceLabel: UILabel!
+    @IBOutlet weak var chartLoad: NVActivityIndicatorView!
+    @IBOutlet weak var currView: UIView!
     @IBOutlet weak var currencyPick: UITableView!
     @IBOutlet weak var priceView: UIView!
+    @IBOutlet weak var calcCurrencyPick1: UIButton!
+    @IBOutlet weak var calcCurrencyPick2: UIButton!
+    @IBOutlet weak var priceCurrencyPick: UIButton!
     @IBOutlet weak var calcView: UIView!
     @IBOutlet weak var calcBTN: UIButton!
     @IBOutlet weak var priceBTN: UIButton!
@@ -32,6 +43,21 @@ class btcVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         calcBTN.backgroundColor = hexStringToUIColor(hex: "#1D76AB")
     }
     
+    @IBAction func calcCurrPick1Prsd(_ sender: Any) {
+        currBtnPressed = "calc1"
+        currView.isHidden = false
+    }
+    
+    @IBAction func calcCurr2Prsd(_ sender: Any) {
+        currBtnPressed = "calc2"
+        currView.isHidden = false
+    }
+    
+    @IBAction func priceCurrPickPrsd(_ sender: Any) {
+        currBtnPressed = "price"
+        currView.isHidden = false
+    }
+    
     @IBAction func calcPressed(_ sender: Any) {
         calcView.isHidden = false
         priceView.isHidden = true
@@ -43,11 +69,32 @@ class btcVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     /* User-defined functions */
     
-    
+    func downloadBTCdata(completion: @escaping () -> Void) {
+        var url = URL(string: "https://api.coindesk.com/v1/bpi/currentprice.json")!
+        Alamofire.request(url).responseJSON { response in
+            
+            if let dict = response.value as? Dictionary<String, AnyObject> {
+                if let bpi = dict["bpi"] as? Dictionary<String, AnyObject> {
+                    if let usd = bpi["USD"] as? Dictionary<String, AnyObject> {
+                        print(usd["rate_float"]!)
+                        self.btcPrice = usd["rate_float"]! as! Double
+                        print(self.btcPrice)
+                    }
+                }
+            }
+        }
+        if 1 == 0 {
+            url = URL(string: "")!
+        }
+        Alamofire.request(url).responseJSON {response in
+            
+        }
+        completion()
+    }
     func updateGraph() {
         var lineChartEntry = [ChartDataEntry]()
         for i in 0..<bitcoinHistory.count {
-            let value = ChartDataEntry(x: -Double(i), y: bitcoinHistory[i])
+            let value = ChartDataEntry(x: Double(i), y: bitcoinHistory[i])
             lineChartEntry.append(value)
         }
         let line1 = LineChartDataSet(values: lineChartEntry, label: "Coinrprice")
@@ -81,6 +128,21 @@ class btcVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         )
     }
     
+    func chartAsync() -> Void {
+        if btcPrice == -1{
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
+                self.chartAsync()
+            }
+            btcChart.isHidden = true
+        } else {
+            btcPriceLabel.text = "\(btcPrice)"
+            btcChart.isHidden = false
+            updateGraph()
+            chartLoad.isHidden = true
+            chartLoad.stopAnimating()
+        }
+    }
+    
     
     /* Protocol functions */
     
@@ -104,7 +166,14 @@ class btcVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("You tapped cell number \(indexPath.row).")
+        if currBtnPressed == "calc1" {
+            calcCurrencyPick1.setTitle(currencies[indexPath.row], for: UIControlState.normal)
+        } else if currBtnPressed == "calc2"{
+            calcCurrencyPick2.setTitle(currencies[indexPath.row], for: UIControlState.normal)
+        } else {
+            priceCurrencyPick.setTitle(currencies[indexPath.row], for: UIControlState.normal)
+        }
+        currView.isHidden = true
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -116,9 +185,18 @@ class btcVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         super.viewDidLoad()
         currencyPick.dataSource = self
         currencyPick.delegate = self
-        self.tableView.tableFooterView = UIView()
-        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cellReuseIdentifier")
-        updateGraph()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        var todayString:String = dateFormatter.string(from: todaysDate as Date)
+        currencyPick.tableFooterView = UIView()
+        chartLoad.color = UIColor.darkGray
+        chartLoad.startAnimating()
+        currencyPick.register(UITableViewCell.self, forCellReuseIdentifier: "cellReuseIdentifier")
+        downloadBTCdata{}
+        btcChart.isHidden = true
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
+            self.chartAsync()
+        }
     }
     
     override func didReceiveMemoryWarning() {
