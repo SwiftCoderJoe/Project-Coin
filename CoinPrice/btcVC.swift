@@ -5,7 +5,8 @@ import NVActivityIndicatorView
 
 class btcVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    /* Variable declaration */
+    
+    /* Global variable declaration */
     
     
     var pastString:String = ""
@@ -94,7 +95,7 @@ class btcVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         Alamofire.request(url).responseJSON {response in
             if let dict = response.value as? Dictionary<String, AnyObject> {
                 if let bpi = dict["bpi"] as? Dictionary<String, Double> {
-                    for i in 0...self.chartLength {
+                    for i in 0..<self.chartLength {
                         let btcAdd1:String = dateFormatter.string(from: Calendar.current.date(byAdding: .day, value: -(self.chartLength-i), to: Date())!)
                         let btcAdd2 = bpi[btcAdd1]
                         self.bitcoinHistory.append(btcAdd2!)
@@ -115,6 +116,8 @@ class btcVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         line1.circleRadius = CGFloat(4.0)
         line1.circleHoleRadius = CGFloat(2.0)
         line1.colors = [NSUIColor.blue]
+        let xAxis = btcChart.xAxis
+        xAxis.valueFormatter = DateValueFormatter()
         let data = LineChartData()
         data.addDataSet(line1)
         btcChart.data = data
@@ -143,7 +146,7 @@ class btcVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
     
     func chartAsync() -> Void {
-        if self.bitcoinHistory.count != self.chartLength + 1 || self.btcPrice == -1 {
+        if self.bitcoinHistory.count != self.chartLength || self.btcPrice == -1 {
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
                 self.chartAsync()
             }

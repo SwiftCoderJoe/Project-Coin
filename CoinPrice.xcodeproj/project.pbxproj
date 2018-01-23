@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E6445072017913700965433 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6445062017913700965433 /* DateFormatter.swift */; };
 		330F104919F2A13B4615501B /* Pods_CoinPrice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F46A0C0A9834C4BCA9C2DC2 /* Pods_CoinPrice.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		D44758761FC503E000F66BA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44758751FC503E000F66BA3 /* AppDelegate.swift */; };
 		D447587B1FC503E000F66BA3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D44758791FC503E000F66BA3 /* Main.storyboard */; };
@@ -29,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0E6445062017913700965433 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		102FB7C72C43CEE13584A48A /* Pods-CoinPrice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoinPrice.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CoinPrice/Pods-CoinPrice.debug.xcconfig"; sourceTree = "<group>"; };
 		1F46A0C0A9834C4BCA9C2DC2 /* Pods_CoinPrice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoinPrice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		27D7D46D5751F9B0549E77C1 /* Pods-CoinPriceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoinPriceTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CoinPriceTests/Pods-CoinPriceTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 				D447587E1FC503E000F66BA3 /* LaunchScreen.storyboard */,
 				D44758811FC503E000F66BA3 /* Info.plist */,
 				D4F1DA111FCCAD7100B07419 /* btcVC.swift */,
+				0E6445062017913700965433 /* DateFormatter.swift */,
 			);
 			path = CoinPrice;
 			sourceTree = "<group>";
@@ -359,6 +362,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4F1DA121FCCAD7100B07419 /* btcVC.swift in Sources */,
+				0E6445072017913700965433 /* DateFormatter.swift in Sources */,
 				D44758761FC503E000F66BA3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
