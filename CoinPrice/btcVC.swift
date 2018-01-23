@@ -8,11 +8,14 @@ class btcVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     /* Variable declaration */
     
     
-    let bitcoinHistory: [Double] = [8000, 8200, 8500, 8700, 9200, 9237]
+    var pastString:String = ""
+    var todayString:String = ""
+    var bitcoinHistory = [Double]()
     typealias DownloadComplete = () -> ()
     private var currBtnPressed:String = ""
     private var btcPrice: Double = -1
     private let currencies = ["USD", "EUR", "GBP"]
+    var chartLength = 50
     let todaysDate:NSDate = NSDate()
     
     
@@ -83,11 +86,22 @@ class btcVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
                 }
             }
         }
-        if 1 == 0 {
-            url = URL(string: "")!
-        }
+        
+        url = URL(string: "https://api.coindesk.com/v1/bpi/historical/close.json?start=\(self.pastString)&end=\(self.todayString)")!
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        
         Alamofire.request(url).responseJSON {response in
-            
+            if let dict = response.value as? Dictionary<String, AnyObject> {
+                if let bpi = dict["bpi"] as? Dictionary<String, Double> {
+                    for i in 0...self.chartLength {
+                        let btcAdd1:String = dateFormatter.string(from: Calendar.current.date(byAdding: .day, value: -(self.chartLength-i), to: Date())!)
+                        let btcAdd2 = bpi[btcAdd1]
+                        self.bitcoinHistory.append(btcAdd2!)
+                        print(self.bitcoinHistory)
+                    }
+                }
+            }
         }
         completion()
     }
@@ -129,13 +143,13 @@ class btcVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
     
     func chartAsync() -> Void {
-        if btcPrice == -1{
+        if self.bitcoinHistory.count != self.chartLength + 1 || self.btcPrice == -1 {
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
                 self.chartAsync()
             }
             btcChart.isHidden = true
         } else {
-            btcPriceLabel.text = "\(btcPrice)"
+            btcPriceLabel.text = "$\(btcPrice)"
             btcChart.isHidden = false
             updateGraph()
             chartLoad.isHidden = true
@@ -187,14 +201,15 @@ class btcVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         currencyPick.delegate = self
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
-        var todayString:String = dateFormatter.string(from: todaysDate as Date)
+        todayString = dateFormatter.string(from: todaysDate as Date)
+        pastString = dateFormatter.string(from: Calendar.current.date(byAdding: .day, value: -chartLength, to: Date())!)
         currencyPick.tableFooterView = UIView()
         chartLoad.color = UIColor.darkGray
         chartLoad.startAnimating()
         currencyPick.register(UITableViewCell.self, forCellReuseIdentifier: "cellReuseIdentifier")
         downloadBTCdata{}
         btcChart.isHidden = true
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()) {
             self.chartAsync()
         }
     }
