@@ -118,6 +118,8 @@ class btcVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         line1.colors = [NSUIColor.blue]
         let xAxis = btcChart.xAxis
         xAxis.valueFormatter = DateValueFormatter()
+        xAxis.labelPosition = .topInside
+        line1.drawValuesEnabled = false
         let data = LineChartData()
         data.addDataSet(line1)
         btcChart.data = data

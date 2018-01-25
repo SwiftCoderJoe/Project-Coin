@@ -9,7 +9,7 @@
 
 import Foundation
 import Charts
-let boi = 50
+let boi:Double = 50
 
 public class DateValueFormatter: NSObject, IAxisValueFormatter {
     private let dateFormatter = DateFormatter()
