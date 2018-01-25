@@ -116,6 +116,7 @@ class btcVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         line1.circleRadius = CGFloat(4.0)
         line1.circleHoleRadius = CGFloat(2.0)
         line1.colors = [NSUIColor.blue]
+        line1.drawCirclesEnabled = false
         let xAxis = btcChart.xAxis
         xAxis.valueFormatter = DateValueFormatter()
         xAxis.labelPosition = .topInside
@@ -123,6 +124,10 @@ class btcVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         let data = LineChartData()
         data.addDataSet(line1)
         btcChart.data = data
+    }
+    
+    func chartValueSelected(chartView: ChartViewBase, entry: ChartDataEntry, dataSetIndex: Int, highlight: Highlight) {
+        let markerPosition = btcChart.getMarkerPosition(highlight: highlight)
     }
     
     func hexStringToUIColor (hex:String) -> UIColor {
