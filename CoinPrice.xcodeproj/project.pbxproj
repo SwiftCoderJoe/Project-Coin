@@ -9,11 +9,14 @@
 /* Begin PBXBuildFile section */
 		0E6445072017913700965433 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6445062017913700965433 /* DateFormatter.swift */; };
 		330F104919F2A13B4615501B /* Pods_CoinPrice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F46A0C0A9834C4BCA9C2DC2 /* Pods_CoinPrice.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		379FD11E72CECD82730F3F1B /* Pods_CoinPriceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4F1DA161FCCB08500B07419 /* Pods_CoinPriceTests.framework */; };
 		D44758761FC503E000F66BA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44758751FC503E000F66BA3 /* AppDelegate.swift */; };
 		D447587B1FC503E000F66BA3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D44758791FC503E000F66BA3 /* Main.storyboard */; };
 		D447587D1FC503E000F66BA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D447587C1FC503E000F66BA3 /* Assets.xcassets */; };
 		D44758801FC503E000F66BA3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D447587E1FC503E000F66BA3 /* LaunchScreen.storyboard */; };
 		D447588B1FC503E000F66BA3 /* CoinPriceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D447588A1FC503E000F66BA3 /* CoinPriceTests.swift */; };
+		D47A44CC201AABA10029EA8A /* BalloonMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47A44CB201AABA10029EA8A /* BalloonMarker.swift */; };
+		D4DF15962023CA1D004D54D3 /* CharLimit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DF15952023CA1D004D54D3 /* CharLimit.swift */; };
 		D4F1DA121FCCAD7100B07419 /* btcVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F1DA111FCCAD7100B07419 /* btcVC.swift */; };
 		D4F1DA151FCCB08500B07419 /* Pods_CoinPriceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4F1DA161FCCB08500B07419 /* Pods_CoinPriceTests.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		F9F7D5BE2EA5D6BC8BF9197E /* Pods_CoinPriceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CC65E679313025233F2A3F9 /* Pods_CoinPriceTests.framework */; };
@@ -28,6 +31,19 @@
 			remoteInfo = CoinPrice;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D47A44C9201A828D0029EA8A /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0E6445062017913700965433 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
@@ -45,6 +61,9 @@
 		D44758861FC503E000F66BA3 /* CoinPriceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoinPriceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D447588A1FC503E000F66BA3 /* CoinPriceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinPriceTests.swift; sourceTree = "<group>"; };
 		D447588C1FC503E000F66BA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D47A44BA201A828D0029EA8A /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		D47A44CB201AABA10029EA8A /* BalloonMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalloonMarker.swift; sourceTree = "<group>"; };
+		D4DF15952023CA1D004D54D3 /* CharLimit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharLimit.swift; sourceTree = "<group>"; };
 		D4F1DA111FCCAD7100B07419 /* btcVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = btcVC.swift; sourceTree = "<group>"; };
 		D4F1DA141FCCAFBC00B07419 /* Charts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Charts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4F1DA161FCCB08500B07419 /* Pods_CoinPriceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_CoinPriceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,6 +85,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9F7D5BE2EA5D6BC8BF9197E /* Pods_CoinPriceTests.framework in Frameworks */,
+				379FD11E72CECD82730F3F1B /* Pods_CoinPriceTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +110,7 @@
 				D4F1DA141FCCAFBC00B07419 /* Charts.framework */,
 				1F46A0C0A9834C4BCA9C2DC2 /* Pods_CoinPrice.framework */,
 				8CC65E679313025233F2A3F9 /* Pods_CoinPriceTests.framework */,
+				D47A44BA201A828D0029EA8A /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -123,7 +144,9 @@
 				D447587E1FC503E000F66BA3 /* LaunchScreen.storyboard */,
 				D44758811FC503E000F66BA3 /* Info.plist */,
 				D4F1DA111FCCAD7100B07419 /* btcVC.swift */,
+				D47A44CB201AABA10029EA8A /* BalloonMarker.swift */,
 				0E6445062017913700965433 /* DateFormatter.swift */,
+				D4DF15952023CA1D004D54D3 /* CharLimit.swift */,
 			);
 			path = CoinPrice;
 			sourceTree = "<group>";
@@ -150,6 +173,7 @@
 				D44758701FC503E000F66BA3 /* Resources */,
 				5E585737BCBA88310B768DFA /* [CP] Embed Pods Frameworks */,
 				E344575EBCAD1EC86041D8F0 /* [CP] Copy Pods Resources */,
+				D47A44C9201A828D0029EA8A /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
@@ -187,8 +211,8 @@
 		D447586A1FC503E000F66BA3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0900;
-				LastUpgradeCheck = 0920;
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = BytleBit;
 				TargetAttributes = {
 					D44758711FC503E000F66BA3 = {
@@ -361,7 +385,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4DF15962023CA1D004D54D3 /* CharLimit.swift in Sources */,
 				D4F1DA121FCCAD7100B07419 /* btcVC.swift in Sources */,
+				D47A44CC201AABA10029EA8A /* BalloonMarker.swift in Sources */,
 				0E6445072017913700965433 /* DateFormatter.swift in Sources */,
 				D44758761FC503E000F66BA3 /* AppDelegate.swift in Sources */,
 			);
@@ -419,6 +445,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -426,6 +453,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -453,9 +481,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -476,6 +503,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -483,6 +511,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -504,7 +533,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -517,6 +546,7 @@
 			baseConfigurationReference = 102FB7C72C43CEE13584A48A /* Pods-CoinPrice.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9QUV825R92;
 				INFOPLIST_FILE = CoinPrice/Info.plist;
@@ -524,7 +554,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.bb.ora.apps.CoinPrice;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -533,6 +562,7 @@
 			baseConfigurationReference = F480487864BED1D77D928B3E /* Pods-CoinPrice.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9QUV825R92;
 				INFOPLIST_FILE = CoinPrice/Info.plist;
@@ -540,7 +570,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.bb.ora.apps.CoinPrice;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -550,6 +579,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CoinPriceTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -567,6 +597,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CoinPriceTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
