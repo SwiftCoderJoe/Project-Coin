@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0930"
+   LastUpgradeVersion = "0700"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C235F77E101E742652CCF98FFDFA5182"
-               BuildableName = "IQKeyboardManagerSwift.framework"
-               BlueprintName = "IQKeyboardManagerSwift"
+               BlueprintIdentifier = "E4FF1E3CF6662771DFE0F3806D05D422"
+               BuildableName = "Pods_CoinPriceTests.framework"
+               BlueprintName = "Pods-CoinPriceTests"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C235F77E101E742652CCF98FFDFA5182"
-            BuildableName = "IQKeyboardManagerSwift.framework"
-            BlueprintName = "IQKeyboardManagerSwift"
+            BlueprintIdentifier = "E4FF1E3CF6662771DFE0F3806D05D422"
+            BuildableName = "Pods_CoinPriceTests.framework"
+            BlueprintName = "Pods-CoinPriceTests"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
