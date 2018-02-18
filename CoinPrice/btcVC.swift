@@ -128,6 +128,10 @@ class btcVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         } else if inputType == "uBTC" {
             return String(cnvrtToLast(inputInt: inputInt/1000000, outputType: outputType))
         } else if inputType == "USD" {
+            print(((inputInt/btcPrices["USD"]!)*10.rounded())/10)
+            print(inputInt/btcPrices["USD"]!)
+            print((inputInt/btcPrices["USD"]!)*10.rounded())
+            print((inputInt/btcPrices["USD"]!.rounded()))
             return String(cnvrtToLast(inputInt: (((inputInt/btcPrices["USD"]!)*10.rounded())/10), outputType: outputType))
         } else if inputType == "GBP" {
             return String(cnvrtToLast(inputInt: (((inputInt/btcPrices["GBP"]!)*1000000.rounded())/1000000), outputType: outputType))
