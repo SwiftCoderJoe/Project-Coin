@@ -8,41 +8,71 @@
 		<dict>
 			<key>isShown</key>
 			<false/>
+<<<<<<< HEAD
+=======
+			<key>orderHint</key>
+			<integer>0</integer>
+>>>>>>> parent of 5a23f91... Rounding needs work--calc works with physical currencies
 		</dict>
 		<key>Charts.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+<<<<<<< HEAD
 		</dict>
 		<key>GoogleToolboxForMac.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+=======
+			<key>orderHint</key>
+			<integer>1</integer>
+>>>>>>> parent of 5a23f91... Rounding needs work--calc works with physical currencies
 		</dict>
 		<key>IQKeyboardManagerSwift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+<<<<<<< HEAD
+=======
+			<key>orderHint</key>
+			<integer>2</integer>
+>>>>>>> parent of 5a23f91... Rounding needs work--calc works with physical currencies
 		</dict>
 		<key>NVActivityIndicatorView.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+<<<<<<< HEAD
+=======
+			<key>orderHint</key>
+			<integer>3</integer>
+>>>>>>> parent of 5a23f91... Rounding needs work--calc works with physical currencies
 		</dict>
 		<key>Pods-CoinPrice.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+<<<<<<< HEAD
+=======
+			<key>orderHint</key>
+			<integer>4</integer>
+>>>>>>> parent of 5a23f91... Rounding needs work--calc works with physical currencies
 		</dict>
 		<key>Pods-CoinPriceTests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+<<<<<<< HEAD
 		</dict>
 		<key>nanopb.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+=======
+			<key>orderHint</key>
+			<integer>5</integer>
+>>>>>>> parent of 5a23f91... Rounding needs work--calc works with physical currencies
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>

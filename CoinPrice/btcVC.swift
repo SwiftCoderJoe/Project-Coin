@@ -110,10 +110,8 @@ class btcVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     
     @IBAction func inputEdited(_ sender: Any) {
-        if let l = calcInput.text {
-            if let i = Double(l) {
-                calcOutput.text = cnvrtTo(inputInt: i, inputType: calcCurrencyPick1.currentTitle!, outputType:  calcCurrencyPick2.currentTitle!)
-            }
+        if let i = calcInput.text {
+            calcOutput.text = cnvrtTo(inputInt: Double(i)!, inputType: calcCurrencyPick1.currentTitle!, outputType: calcCurrencyPick2.currentTitle!)
         }
     }
     
@@ -127,12 +125,6 @@ class btcVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             return String(cnvrtToLast(inputInt: inputInt/1000, outputType: outputType))
         } else if inputType == "uBTC" {
             return String(cnvrtToLast(inputInt: inputInt/1000000, outputType: outputType))
-        } else if inputType == "USD" {
-            return String(cnvrtToLast(inputInt: (((inputInt/btcPrices["USD"]!)*10.rounded())/10), outputType: outputType))
-        } else if inputType == "GBP" {
-            return String(cnvrtToLast(inputInt: (((inputInt/btcPrices["GBP"]!)*1000000.rounded())/1000000), outputType: outputType))
-        } else if inputType == "EUR" {
-            return String(cnvrtToLast(inputInt: (((inputInt/btcPrices["EUR"]!)*1000000.rounded())/1000000), outputType: outputType))
         } else {
             return String(cnvrtToLast(inputInt: inputInt, outputType: outputType))
         }
