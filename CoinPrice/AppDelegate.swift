@@ -8,6 +8,7 @@
 
 import UIKit
 import IQKeyboardManagerSwift
+import GoogleMobileAds
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         IQKeyboardManager.sharedManager().enable = true
+        GADMobileAds.configure(withApplicationID: "ca-app-pub-4026820850636406~1751726648")
         return true
     }
 
