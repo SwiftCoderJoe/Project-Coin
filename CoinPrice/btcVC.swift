@@ -28,6 +28,7 @@ class btcVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     var chartLength = 50
     let todaysDate:NSDate = NSDate()
     let autoUpdateTime:Double = 60
+    var lastEdited:String?
     
     
     /* IBOutlets */
@@ -114,13 +115,20 @@ class btcVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             if let i = Double(l) {
                 calcOutput.text = cnvrtTo(inputInt: i, inputType: calcCurrencyPick1.currentTitle!, outputType:  calcCurrencyPick2.currentTitle!)
             }
+            lastEdited = "Input"
         }
     }
     
     @IBAction func outputEdited(_ sender: Any) {
+        if let l = calcOutput.text {
+            if let i = Double(l) {
+                calcInput.text = cnvrtTo(inputInt: i, inputType: calcCurrencyPick2.currentTitle!, outputType: calcCurrencyPick1.currentTitle!)
+            }
+            lastEdited = "Output"
+        }
     }
     
-    func cnvrtTo(inputInt:Double, inputType:String, outputType:String) -> String{
+    func cnvrtTo(inputInt:Double, inputType:String, outputType:String) -> String {
         if inputType == "Satoshi" {
             return String(cnvrtToLast(inputInt: inputInt/100000000, outputType: outputType))
         } else if inputType == "mBTC" {
@@ -128,15 +136,11 @@ class btcVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         } else if inputType == "uBTC" {
             return String(cnvrtToLast(inputInt: inputInt/1000000, outputType: outputType))
         } else if inputType == "USD" {
-            print(((inputInt/btcPrices["USD"]!)*10.rounded())/10)
-            print(inputInt/btcPrices["USD"]!)
-            print((inputInt/btcPrices["USD"]!)*10.rounded())
-            print((inputInt/btcPrices["USD"]!.rounded()))
-            return String(cnvrtToLast(inputInt: (((inputInt/btcPrices["USD"]!)*10.rounded())/10), outputType: outputType))
+            return String(cnvrtToLast(inputInt: (((inputInt/btcPrices["USD"]!*1000000).rounded())/1000000), outputType: outputType))
         } else if inputType == "GBP" {
-            return String(cnvrtToLast(inputInt: (((inputInt/btcPrices["GBP"]!)*1000000.rounded())/1000000), outputType: outputType))
+            return String(cnvrtToLast(inputInt: (((inputInt/btcPrices["GBP"]!*1000000).rounded())/1000000), outputType: outputType))
         } else if inputType == "EUR" {
-            return String(cnvrtToLast(inputInt: (((inputInt/btcPrices["EUR"]!)*1000000.rounded())/1000000), outputType: outputType))
+            return String(cnvrtToLast(inputInt: (((inputInt/btcPrices["EUR"]!*1000000).rounded())/1000000), outputType: outputType))
         } else {
             return String(cnvrtToLast(inputInt: inputInt, outputType: outputType))
         }
@@ -286,7 +290,7 @@ class btcVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         )
     }
     
-    func chartAsync() -> Void {
+    func chartAsync() {
         if self.bitcoinHistory.count != self.chartLength || self.btcPrices.count == 0 {
             if !chartLoad.isAnimating {
                 chartLoad.startAnimating()
@@ -343,16 +347,36 @@ class btcVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         calcView.isUserInteractionEnabled = true
+        var l = false
         if currBtnPressed == "calc1" {
             calcCurrencyPick1.setTitle(halfCurrencies[indexPath.row], for: UIControlState.normal)
+            l = true
         } else if currBtnPressed == "calc2"{
             calcCurrencyPick2.setTitle(btcCurrencies[indexPath.row], for: UIControlState.normal)
+            l = true
         } else {
             priceCurrencyPick.setTitle(currencies[indexPath.row], for: UIControlState.normal)
             currentCurr = currencies[indexPath.row]
             bitcoinHistory = []
             updateBTCchart {}
             chartAsync()
+        }
+        if l {
+            if let i = lastEdited {
+                if i == "Input" {
+                    if let k = calcInput.text {
+                        if let j = Double(k) {
+                            calcOutput.text = cnvrtTo(inputInt: j, inputType: calcCurrencyPick1.currentTitle!, outputType:  calcCurrencyPick2.currentTitle!)
+                        }
+                    }
+                } else {
+                    if let k = calcOutput.text {
+                        if let j = Double(k) {
+                            calcInput.text = cnvrtTo(inputInt: j, inputType: calcCurrencyPick2.currentTitle!, outputType:  calcCurrencyPick1.currentTitle!)
+                        }
+                    }
+                }
+            }
         }
         currView.isHidden = true
     }
