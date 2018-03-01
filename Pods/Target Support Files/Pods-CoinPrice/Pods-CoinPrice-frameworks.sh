@@ -8,12 +8,15 @@ SWIFT_STDLIB_PATH="${DT_TOOLCHAIN_DIR}/usr/lib/swift/${PLATFORM_NAME}"
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 # This protects against multiple targets copying the same framework dependency at the same time. The solution
 # was originally proposed here: https://lists.samba.org/archive/rsync/2008-February/020158.html
 RSYNC_PROTECT_TMP_FILES=(--filter "P .*.??????")
 
 =======
 >>>>>>> origin/BTCui-finish-and-polish
+=======
+>>>>>>> BTCui-finish-and-polish
 =======
 >>>>>>> BTCui-finish-and-polish
 install_framework()
@@ -66,6 +69,7 @@ install_framework()
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Copies the dSYM of a vendored framework
 install_dsym() {
   local source="$1"
@@ -77,6 +81,8 @@ install_dsym() {
 
 =======
 >>>>>>> origin/BTCui-finish-and-polish
+=======
+>>>>>>> BTCui-finish-and-polish
 =======
 >>>>>>> BTCui-finish-and-polish
 # Signs a framework with the provided identity
@@ -98,10 +104,14 @@ strip_invalid_archs() {
   for arch in $archs; do
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     if ! [[ "${ARCHS}" == *"$arch"* ]]; then
 =======
     if ! [[ "${VALID_ARCHS}" == *"$arch"* ]]; then
 >>>>>>> origin/BTCui-finish-and-polish
+=======
+    if ! [[ "${VALID_ARCHS}" == *"$arch"* ]]; then
+>>>>>>> BTCui-finish-and-polish
 =======
     if ! [[ "${VALID_ARCHS}" == *"$arch"* ]]; then
 >>>>>>> BTCui-finish-and-polish
@@ -117,6 +127,7 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
@@ -138,10 +149,19 @@ if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait
 =======
 =======
+=======
   install_framework "$BUILT_PRODUCTS_DIR/Alamofire/Alamofire.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Charts/Charts.framework"
   install_framework "$BUILT_PRODUCTS_DIR/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework"
   install_framework "$BUILT_PRODUCTS_DIR/NVActivityIndicatorView/NVActivityIndicatorView.framework"
+fi
+if [[ "$CONFIGURATION" == "Release" ]]; then
+>>>>>>> BTCui-finish-and-polish
+  install_framework "$BUILT_PRODUCTS_DIR/Alamofire/Alamofire.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/Charts/Charts.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/NVActivityIndicatorView/NVActivityIndicatorView.framework"
+<<<<<<< HEAD
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
 >>>>>>> BTCui-finish-and-polish
@@ -157,6 +177,8 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework"
   install_framework "$BUILT_PRODUCTS_DIR/NVActivityIndicatorView/NVActivityIndicatorView.framework"
 >>>>>>> origin/BTCui-finish-and-polish
+=======
+>>>>>>> BTCui-finish-and-polish
 =======
 >>>>>>> BTCui-finish-and-polish
 fi

@@ -674,6 +674,7 @@
 		65BB27D830C755AFFFD0499C10FCFA4A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		65C56FB2BF5CF1ADADDB80C88FEC4F9A /* AxisRendererBase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AxisRendererBase.swift; path = Source/Charts/Renderers/AxisRendererBase.swift; sourceTree = "<group>"; };
 		6609618B1D00D1C830266BE4C25C78D8 /* IQToolbar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQToolbar.swift; path = IQKeyboardManagerSwift/IQToolbar/IQToolbar.swift; sourceTree = "<group>"; };
 		6657313D281ABE236B5F6C6E67E256D0 /* SquareShapeRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SquareShapeRenderer.swift; path = Source/Charts/Renderers/Scatter/SquareShapeRenderer.swift; sourceTree = "<group>"; };
@@ -695,6 +696,8 @@
 		7217657073E0609274E6C80687544F2C /* nanopb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = nanopb.framework; path = nanopb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		74C44859DF8BAB47B46315492E003A8E /* AxisBase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AxisBase.swift; path = Source/Charts/Components/AxisBase.swift; sourceTree = "<group>"; };
 =======
+=======
+>>>>>>> BTCui-finish-and-polish
 =======
 >>>>>>> BTCui-finish-and-polish
 		6647ACC906E3FCEEFF3813BB32B1FCF6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
@@ -938,6 +941,7 @@
 				25D4D06E22C7787FDB93BDD53C2E9EB7 /* QuartzCore.framework in Frameworks */,
 				0EFC0E4B3464CBC46DB6EC61679829DC /* UIKit.framework in Frameworks */,
 <<<<<<< HEAD
+<<<<<<< HEAD
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -946,6 +950,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				05B1F02560378D28FEBD4E8F6D293216 /* Foundation.framework in Frameworks */,
+=======
+>>>>>>> BTCui-finish-and-polish
 =======
 >>>>>>> BTCui-finish-and-polish
 			);
@@ -975,6 +981,7 @@
 			files = (
 				B4CA1C1703826B8F5E3B425FA4736244 /* Foundation.framework in Frameworks */,
 <<<<<<< HEAD
+<<<<<<< HEAD
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -983,6 +990,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CC8FAD25A543AD66585397D8AC4CC30 /* Foundation.framework in Frameworks */,
+=======
+>>>>>>> BTCui-finish-and-polish
 =======
 >>>>>>> BTCui-finish-and-polish
 			);
@@ -994,10 +1003,14 @@
 			files = (
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 				93D51748565CFEB9490FBA7DA993C5C0 /* Foundation.framework in Frameworks */,
 =======
 				BD73083109AA59A60754CC14E248022C /* Foundation.framework in Frameworks */,
 >>>>>>> origin/BTCui-finish-and-polish
+=======
+				BD73083109AA59A60754CC14E248022C /* Foundation.framework in Frameworks */,
+>>>>>>> BTCui-finish-and-polish
 =======
 				BD73083109AA59A60754CC14E248022C /* Foundation.framework in Frameworks */,
 >>>>>>> BTCui-finish-and-polish
@@ -1065,6 +1078,17 @@
 <<<<<<< HEAD
 		2535CE389BA0594C909371B497E4E31D /* Pods */ = {
 =======
+		2691F93227E549B2A03FB9E6D0C3C623 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				0D8EF2301073B01E30612B5B1BD94446 /* CoreGraphics.framework */,
+				6647ACC906E3FCEEFF3813BB32B1FCF6 /* Foundation.framework */,
+				51498E299B7CB17BCC8B54F93C150FAA /* QuartzCore.framework */,
+				EC1FD743D031D373EDF29CC526F758E2 /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
 		2691F93227E549B2A03FB9E6D0C3C623 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -1404,6 +1428,7 @@
 		};
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		8F8FEF3140598EAB2B3D56BB84B5389A /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -1417,6 +1442,8 @@
 		};
 		95B3C6D45D50702F93346EB618418515 /* Frameworks */ = {
 =======
+=======
+>>>>>>> BTCui-finish-and-polish
 =======
 >>>>>>> BTCui-finish-and-polish
 		A0FA2954B8A8CD51E9ADA4D9713DA7A2 /* Pods */ = {
@@ -2227,7 +2254,10 @@
 			baseConfigurationReference = 499FFDE0CA035806E742B4E2C7979A7E /* Alamofire.xcconfig */;
 			buildSettings = {
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> BTCui-finish-and-polish
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -2261,6 +2291,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D637F082297D31CDB3B799964890CFE7 /* IQKeyboardManagerSwift.xcconfig */;
 			buildSettings = {
+<<<<<<< HEAD
+>>>>>>> BTCui-finish-and-polish
+=======
 >>>>>>> BTCui-finish-and-polish
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -2274,6 +2307,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 <<<<<<< HEAD
+<<<<<<< HEAD
 				GCC_PREFIX_HEADER = "Target Support Files/Alamofire/Alamofire-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Alamofire/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -2282,6 +2316,16 @@
 				MODULEMAP_FILE = "Target Support Files/Alamofire/Alamofire.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = Alamofire;
+=======
+				GCC_PREFIX_HEADER = "Target Support Files/IQKeyboardManagerSwift/IQKeyboardManagerSwift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/IQKeyboardManagerSwift/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/IQKeyboardManagerSwift/IQKeyboardManagerSwift.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = IQKeyboardManagerSwift;
+>>>>>>> BTCui-finish-and-polish
 =======
 				GCC_PREFIX_HEADER = "Target Support Files/IQKeyboardManagerSwift/IQKeyboardManagerSwift-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/IQKeyboardManagerSwift/Info.plist";
@@ -2304,9 +2348,15 @@
 		};
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		15C069F155AD7CFEFD1E42E043D24C9F /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 29DB107E9D4D71FB5FC7391DD91E00D4 /* nanopb.xcconfig */;
+=======
+		2012FCD8666C08A42FD87E028450F8C3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3B84D48478F8B26E8366BBEFF830B715 /* Pods-CoinPrice.debug.xcconfig */;
+>>>>>>> BTCui-finish-and-polish
 =======
 		2012FCD8666C08A42FD87E028450F8C3 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -2323,8 +2373,14 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 <<<<<<< HEAD
+<<<<<<< HEAD
 				GCC_PREFIX_HEADER = "Target Support Files/nanopb/nanopb-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/nanopb/Info.plist";
+=======
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-CoinPrice/Info.plist";
+>>>>>>> BTCui-finish-and-polish
 =======
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -2352,6 +2408,9 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+<<<<<<< HEAD
+>>>>>>> BTCui-finish-and-polish
+=======
 >>>>>>> BTCui-finish-and-polish
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -2359,6 +2418,7 @@
 			};
 			name = Debug;
 		};
+<<<<<<< HEAD
 <<<<<<< HEAD
 		23512CA2F944D060505C1DD1059A2212 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -2368,6 +2428,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D637F082297D31CDB3B799964890CFE7 /* IQKeyboardManagerSwift.xcconfig */;
 >>>>>>> origin/BTCui-finish-and-polish
+=======
+		503C0EBEBA705363370F6056F2D60F9A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 26CC61FCFD9A067FF52D89C8BC1578C6 /* NVActivityIndicatorView.xcconfig */;
+>>>>>>> BTCui-finish-and-polish
 =======
 		503C0EBEBA705363370F6056F2D60F9A /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -2386,6 +2451,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 <<<<<<< HEAD
+<<<<<<< HEAD
 				GCC_PREFIX_HEADER = "Target Support Files/IQKeyboardManagerSwift/IQKeyboardManagerSwift-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/IQKeyboardManagerSwift/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -2394,6 +2460,16 @@
 				MODULEMAP_FILE = "Target Support Files/IQKeyboardManagerSwift/IQKeyboardManagerSwift.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = IQKeyboardManagerSwift;
+=======
+				GCC_PREFIX_HEADER = "Target Support Files/NVActivityIndicatorView/NVActivityIndicatorView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/NVActivityIndicatorView/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/NVActivityIndicatorView/NVActivityIndicatorView.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = NVActivityIndicatorView;
+>>>>>>> BTCui-finish-and-polish
 =======
 				GCC_PREFIX_HEADER = "Target Support Files/NVActivityIndicatorView/NVActivityIndicatorView-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/NVActivityIndicatorView/Info.plist";
@@ -2415,9 +2491,15 @@
 			name = Debug;
 		};
 <<<<<<< HEAD
+<<<<<<< HEAD
 		2012FCD8666C08A42FD87E028450F8C3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3B84D48478F8B26E8366BBEFF830B715 /* Pods-CoinPrice.debug.xcconfig */;
+=======
+		798ED52D35F9645E3F8FAAA3FE93EDBC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 26CC61FCFD9A067FF52D89C8BC1578C6 /* NVActivityIndicatorView.xcconfig */;
+>>>>>>> BTCui-finish-and-polish
 =======
 		798ED52D35F9645E3F8FAAA3FE93EDBC /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -2429,7 +2511,11 @@
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 <<<<<<< HEAD
+<<<<<<< HEAD
 				DEBUG_INFORMATION_FORMAT = dwarf;
+=======
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+>>>>>>> BTCui-finish-and-polish
 =======
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 >>>>>>> BTCui-finish-and-polish
@@ -2439,6 +2525,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
+<<<<<<< HEAD
 <<<<<<< HEAD
 				INFOPLIST_FILE = "Target Support Files/Pods-CoinPrice/Info.plist";
 =======
@@ -2468,12 +2555,26 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 >>>>>>> BTCui-finish-and-polish
+=======
+				GCC_PREFIX_HEADER = "Target Support Files/NVActivityIndicatorView/NVActivityIndicatorView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/NVActivityIndicatorView/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/NVActivityIndicatorView/NVActivityIndicatorView.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = NVActivityIndicatorView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+>>>>>>> BTCui-finish-and-polish
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
+<<<<<<< HEAD
 <<<<<<< HEAD
 		503C0EBEBA705363370F6056F2D60F9A /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -2482,6 +2583,11 @@
 =======
 			baseConfigurationReference = 26CC61FCFD9A067FF52D89C8BC1578C6 /* NVActivityIndicatorView.xcconfig */;
 >>>>>>> origin/BTCui-finish-and-polish
+=======
+		9963493536542E7B863800541C7720EE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4401B8817CB7DE232D1758AAF3903BAC /* Charts.xcconfig */;
+>>>>>>> BTCui-finish-and-polish
 =======
 		9963493536542E7B863800541C7720EE /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -2500,6 +2606,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 <<<<<<< HEAD
+<<<<<<< HEAD
 				GCC_PREFIX_HEADER = "Target Support Files/NVActivityIndicatorView/NVActivityIndicatorView-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/NVActivityIndicatorView/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -2508,6 +2615,16 @@
 				MODULEMAP_FILE = "Target Support Files/NVActivityIndicatorView/NVActivityIndicatorView.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = NVActivityIndicatorView;
+=======
+				GCC_PREFIX_HEADER = "Target Support Files/Charts/Charts-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Charts/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Charts/Charts.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = Charts;
+>>>>>>> BTCui-finish-and-polish
 =======
 				GCC_PREFIX_HEADER = "Target Support Files/Charts/Charts-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Charts/Info.plist";
@@ -2530,7 +2647,11 @@
 		};
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		4FD46B2551582DF47CD95CD77DDF6B34 /* Release */ = {
+=======
+		9C7A5EE6DE2C3784BAA89D1A5D5EB30D /* Release */ = {
+>>>>>>> BTCui-finish-and-polish
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 28D443119C2DE8CDD141C57411BCE718 /* GoogleToolboxForMac.xcconfig */;
 =======
@@ -2539,6 +2660,7 @@
 			baseConfigurationReference = 26CC61FCFD9A067FF52D89C8BC1578C6 /* NVActivityIndicatorView.xcconfig */;
 >>>>>>> origin/BTCui-finish-and-polish
 			buildSettings = {
+<<<<<<< HEAD
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -2623,6 +2745,8 @@
 >>>>>>> BTCui-finish-and-polish
 			isa = XCBuildConfiguration;
 			buildSettings = {
+=======
+>>>>>>> BTCui-finish-and-polish
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -2658,6 +2782,7 @@
 				SYMROOT = "${SRCROOT}/../build";
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 			};
 			name = Debug;
 		};
@@ -2691,6 +2816,8 @@
 >>>>>>> origin/BTCui-finish-and-polish
 =======
 >>>>>>> BTCui-finish-and-polish
+=======
+>>>>>>> BTCui-finish-and-polish
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -2699,10 +2826,14 @@
 			isa = XCBuildConfiguration;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 			baseConfigurationReference = 9109D5E21BE984A302F8AB0C0D6BCBA3 /* NVActivityIndicatorView.xcconfig */;
 =======
 			baseConfigurationReference = D637F082297D31CDB3B799964890CFE7 /* IQKeyboardManagerSwift.xcconfig */;
 >>>>>>> origin/BTCui-finish-and-polish
+=======
+			baseConfigurationReference = D637F082297D31CDB3B799964890CFE7 /* IQKeyboardManagerSwift.xcconfig */;
+>>>>>>> BTCui-finish-and-polish
 =======
 			baseConfigurationReference = D637F082297D31CDB3B799964890CFE7 /* IQKeyboardManagerSwift.xcconfig */;
 >>>>>>> BTCui-finish-and-polish
@@ -2761,6 +2892,9 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> BTCui-finish-and-polish
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -2769,24 +2903,37 @@
 			name = Release;
 		};
 <<<<<<< HEAD
+<<<<<<< HEAD
 		9B08F59FF51AFF627CB714A7411CD158 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 29DB107E9D4D71FB5FC7391DD91E00D4 /* nanopb.xcconfig */;
+=======
+		C64E0F2B62AD7B1437554C71FEBEC342 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 151E84B73BFFDC1486C9F3C59CAF2E34 /* Pods-CoinPriceTests.debug.xcconfig */;
+>>>>>>> BTCui-finish-and-polish
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+<<<<<<< HEAD
 				GCC_PREFIX_HEADER = "Target Support Files/nanopb/nanopb-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/nanopb/Info.plist";
+=======
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-CoinPriceTests/Info.plist";
+>>>>>>> BTCui-finish-and-polish
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+<<<<<<< HEAD
 				MODULEMAP_FILE = "Target Support Files/nanopb/nanopb.modulemap";
 				PRODUCT_NAME = nanopb;
 				SDKROOT = iphoneos;
@@ -2795,6 +2942,18 @@
 =======
 >>>>>>> BTCui-finish-and-polish
 				SWIFT_VERSION = 4.0;
+=======
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CoinPriceTests/Pods-CoinPriceTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_CoinPriceTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+>>>>>>> BTCui-finish-and-polish
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -2894,97 +3053,10 @@
 			name = Release;
 		};
 <<<<<<< HEAD
+<<<<<<< HEAD
 		B987D1F3258AB4EAA4FE9214424E0B02 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3B84D48478F8B26E8366BBEFF830B715 /* Pods-CoinPrice.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-CoinPrice/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-CoinPrice/Pods-CoinPrice.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_CoinPrice;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-<<<<<<< HEAD
-		BAAAD9A700E57E4445F1C09E5E07C6E9 /* Release */ = {
-=======
-		CC799811C048197AEAD3E465E1AFFDF3 /* Release */ = {
->>>>>>> BTCui-finish-and-polish
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 31360DAA82F24E68EFDBB25A536E3E6D /* Pods-CoinPrice.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-<<<<<<< HEAD
-				INFOPLIST_FILE = "Target Support Files/Pods-CoinPrice/Info.plist";
-=======
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Alamofire/Alamofire-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Alamofire/Info.plist";
->>>>>>> BTCui-finish-and-polish
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-<<<<<<< HEAD
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-CoinPrice/Pods-CoinPrice.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_CoinPrice;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-=======
-				MODULEMAP_FILE = "Target Support Files/Alamofire/Alamofire.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = Alamofire;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
->>>>>>> BTCui-finish-and-polish
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-<<<<<<< HEAD
-		D19459BBA4D29829D7678D9CDFE01E64 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 28D443119C2DE8CDD141C57411BCE718 /* GoogleToolboxForMac.xcconfig */;
 =======
 		CE5513B3E35A5C69E7F70F186BD3CE9C /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -3045,12 +3117,178 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 <<<<<<< HEAD
+				INFOPLIST_FILE = "Target Support Files/Pods-CoinPrice/Info.plist";
+=======
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-CoinPriceTests/Info.plist";
+>>>>>>> BTCui-finish-and-polish
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+<<<<<<< HEAD
+				MODULEMAP_FILE = "Target Support Files/Pods-CoinPrice/Pods-CoinPrice.modulemap";
+=======
+				MODULEMAP_FILE = "Target Support Files/Pods-CoinPriceTests/Pods-CoinPriceTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+>>>>>>> BTCui-finish-and-polish
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+<<<<<<< HEAD
+				PRODUCT_NAME = Pods_CoinPrice;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+<<<<<<< HEAD
+		BAAAD9A700E57E4445F1C09E5E07C6E9 /* Release */ = {
+=======
+		CC799811C048197AEAD3E465E1AFFDF3 /* Release */ = {
+>>>>>>> BTCui-finish-and-polish
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 31360DAA82F24E68EFDBB25A536E3E6D /* Pods-CoinPrice.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+<<<<<<< HEAD
+				INFOPLIST_FILE = "Target Support Files/Pods-CoinPrice/Info.plist";
+=======
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Alamofire/Alamofire-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Alamofire/Info.plist";
+>>>>>>> BTCui-finish-and-polish
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+<<<<<<< HEAD
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CoinPrice/Pods-CoinPrice.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_CoinPrice;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+=======
+				MODULEMAP_FILE = "Target Support Files/Alamofire/Alamofire.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = Alamofire;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+>>>>>>> BTCui-finish-and-polish
+=======
+				PRODUCT_NAME = Pods_CoinPriceTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+>>>>>>> BTCui-finish-and-polish
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+<<<<<<< HEAD
+<<<<<<< HEAD
+		D19459BBA4D29829D7678D9CDFE01E64 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 28D443119C2DE8CDD141C57411BCE718 /* GoogleToolboxForMac.xcconfig */;
+=======
+		CE5513B3E35A5C69E7F70F186BD3CE9C /* Debug */ = {
+			isa = XCBuildConfiguration;
+>>>>>>> BTCui-finish-and-polish
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		D5110B15730A95C51981CC1EC61FA4A8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5C5AF97C172F503A59C0C7441DA5FC59 /* Pods-CoinPriceTests.release.xcconfig */;
+=======
+		DE7D0E48B345056A246E310C2C00C596 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 31360DAA82F24E68EFDBB25A536E3E6D /* Pods-CoinPrice.release.xcconfig */;
+>>>>>>> BTCui-finish-and-polish
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+<<<<<<< HEAD
+<<<<<<< HEAD
 				GCC_PREFIX_HEADER = "Target Support Files/GoogleToolboxForMac/GoogleToolboxForMac-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/GoogleToolboxForMac/Info.plist";
 =======
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "Target Support Files/Pods-CoinPriceTests/Info.plist";
+>>>>>>> BTCui-finish-and-polish
+=======
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-CoinPrice/Info.plist";
 >>>>>>> BTCui-finish-and-polish
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -3064,13 +3302,17 @@
 				SWIFT_VERSION = 4.0;
 =======
 				MACH_O_TYPE = staticlib;
+<<<<<<< HEAD
 				MODULEMAP_FILE = "Target Support Files/Pods-CoinPriceTests/Pods-CoinPriceTests.modulemap";
+=======
+				MODULEMAP_FILE = "Target Support Files/Pods-CoinPrice/Pods-CoinPrice.modulemap";
+>>>>>>> BTCui-finish-and-polish
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_CoinPriceTests;
+				PRODUCT_NAME = Pods_CoinPrice;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 >>>>>>> BTCui-finish-and-polish
@@ -3078,7 +3320,7 @@
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
 <<<<<<< HEAD
 		DDCD46C296262746A887ADB55B1EFAC5 /* Release */ = {
@@ -3282,6 +3524,7 @@
 				9963493536542E7B863800541C7720EE /* Debug */,
 				C18A8F4B1CA2F5970063217CFB216512 /* Release */,
 <<<<<<< HEAD
+<<<<<<< HEAD
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -3291,6 +3534,8 @@
 			buildConfigurations = (
 				D19459BBA4D29829D7678D9CDFE01E64 /* Debug */,
 				4FD46B2551582DF47CD95CD77DDF6B34 /* Release */,
+=======
+>>>>>>> BTCui-finish-and-polish
 =======
 >>>>>>> BTCui-finish-and-polish
 			);
@@ -3303,6 +3548,7 @@
 				1EAD40503D8E9B43A9DBA6D378F8AA74 /* Debug */,
 				BF9DEC25FCBFD31C13800C5446380852 /* Release */,
 <<<<<<< HEAD
+<<<<<<< HEAD
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -3312,6 +3558,8 @@
 			buildConfigurations = (
 				9B08F59FF51AFF627CB714A7411CD158 /* Debug */,
 				15C069F155AD7CFEFD1E42E043D24C9F /* Release */,
+=======
+>>>>>>> BTCui-finish-and-polish
 =======
 >>>>>>> BTCui-finish-and-polish
 			);
