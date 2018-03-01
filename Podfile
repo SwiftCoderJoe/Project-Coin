@@ -13,6 +13,10 @@ target 'CoinPrice' do
   
   pod 'IQKeyboardManagerSwift'
   
+  pod 'Firebase/Core'
+  
+  pod 'Google-Mobile-Ads-SDK'
+  
   target 'CoinPriceTests' do
     inherit! :search_paths
   end

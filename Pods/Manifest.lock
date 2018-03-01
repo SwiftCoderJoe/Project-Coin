@@ -3,7 +3,27 @@ PODS:
   - Charts (3.0.4):
     - Charts/Core (= 3.0.4)
   - Charts/Core (3.0.4)
+  - Firebase/Core (4.6.0):
+    - FirebaseAnalytics (= 4.0.5)
+    - FirebaseCore (= 4.0.11)
+  - FirebaseAnalytics (4.0.5):
+    - FirebaseCore (~> 4.0)
+    - FirebaseInstanceID (~> 2.0)
+    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+    - nanopb (~> 0.3)
+  - FirebaseCore (4.0.11):
+    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+  - FirebaseInstanceID (2.0.6)
+  - Google-Mobile-Ads-SDK (7.26.0)
+  - GoogleToolboxForMac/Defines (2.1.3)
+  - GoogleToolboxForMac/NSData+zlib (2.1.3):
+    - GoogleToolboxForMac/Defines (= 2.1.3)
   - IQKeyboardManagerSwift (5.0.6)
+  - nanopb (0.3.8):
+    - nanopb/decode (= 0.3.8)
+    - nanopb/encode (= 0.3.8)
+  - nanopb/decode (0.3.8)
+  - nanopb/encode (0.3.8)
   - NVActivityIndicatorView (4.0.0):
     - NVActivityIndicatorView/Presenter (= 4.0.0)
   - NVActivityIndicatorView/Presenter (4.0.0)
@@ -11,15 +31,36 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 4.5)
   - Charts
+  - Firebase/Core
+  - Google-Mobile-Ads-SDK
   - IQKeyboardManagerSwift
   - NVActivityIndicatorView
 
 SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
   Charts: 0705898046257443f0afbbc3179f4b67507b6e48
+  Firebase: 27321a925aa85520618255a7c630859e0502ccbd
+  FirebaseAnalytics: 5b02a63ead2c3f0259cfc7f15e053e440587ecf8
+  FirebaseCore: 2a946ece8fbe3ce1fdeeb55324f273caade22df9
+  FirebaseInstanceID: 24958382a1011bba5aaff37e334e7a650b9118f5
+  Google-Mobile-Ads-SDK: 22d4a6fe18d526adcc12a86d8cc2d53872700966
+  GoogleToolboxForMac: 2501e2ad72a52eb3dfe7bd9aee7dad11b858bd20
   IQKeyboardManagerSwift: 02bfbb0dff71c66d0ab77d80d25dfce0c3717735
+  nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   NVActivityIndicatorView: 54c9b93b6f25a4f467512680c0c90c09a1095cf2
 
-PODFILE CHECKSUM: c0f36046e96a5d778211ce3e5686e8a01c41fc57
+PODFILE CHECKSUM: 31c97ab54a93f27cc43898ffef80556a6b8a101c
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+COCOAPODS: 1.3.1
+=======
 COCOAPODS: 1.1.1
+>>>>>>> origin/BTCui-finish-and-polish
+=======
+COCOAPODS: 1.1.1
+>>>>>>> BTCui-finish-and-polish
+=======
+COCOAPODS: 1.1.1
+>>>>>>> BTCui-finish-and-polish
