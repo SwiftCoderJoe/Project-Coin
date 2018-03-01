@@ -9,12 +9,16 @@
 /* Begin PBXBuildFile section */
 		0E6445072017913700965433 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6445062017913700965433 /* DateFormatter.swift */; };
 <<<<<<< HEAD
+<<<<<<< HEAD
 		330F104919F2A13B4615501B /* Pods_CoinPrice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F46A0C0A9834C4BCA9C2DC2 /* Pods_CoinPrice.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		379FD11E72CECD82730F3F1B /* Pods_CoinPriceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4F1DA161FCCB08500B07419 /* Pods_CoinPriceTests.framework */; };
 		D4405B73203EF45A008FDBDC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D4405B72203EF45A008FDBDC /* GoogleService-Info.plist */; };
 =======
 		2F9E7C8257BF46134D960326 /* Pods_CoinPrice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0D87B09CD2620134DCC09F3 /* Pods_CoinPrice.framework */; };
 >>>>>>> origin/BTCui-finish-and-polish
+=======
+		2F9E7C8257BF46134D960326 /* Pods_CoinPrice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0D87B09CD2620134DCC09F3 /* Pods_CoinPrice.framework */; };
+>>>>>>> BTCui-finish-and-polish
 		D44758761FC503E000F66BA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44758751FC503E000F66BA3 /* AppDelegate.swift */; };
 		D447587B1FC503E000F66BA3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D44758791FC503E000F66BA3 /* Main.storyboard */; };
 		D447587D1FC503E000F66BA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D447587C1FC503E000F66BA3 /* Assets.xcassets */; };
@@ -53,6 +57,7 @@
 		064067C6D84FD5C75E081E9E /* Pods-CoinPrice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoinPrice.release.xcconfig"; path = "Pods/Target Support Files/Pods-CoinPrice/Pods-CoinPrice.release.xcconfig"; sourceTree = "<group>"; };
 		0E6445062017913700965433 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 <<<<<<< HEAD
+<<<<<<< HEAD
 		102FB7C72C43CEE13584A48A /* Pods-CoinPrice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoinPrice.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CoinPrice/Pods-CoinPrice.debug.xcconfig"; sourceTree = "<group>"; };
 		1F46A0C0A9834C4BCA9C2DC2 /* Pods_CoinPrice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoinPrice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		27D7D46D5751F9B0549E77C1 /* Pods-CoinPriceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoinPriceTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CoinPriceTests/Pods-CoinPriceTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -64,6 +69,11 @@
 		2B1BCEA110505505C8CD9E98 /* Pods-CoinPriceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoinPriceTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CoinPriceTests/Pods-CoinPriceTests.release.xcconfig"; sourceTree = "<group>"; };
 		D0D87B09CD2620134DCC09F3 /* Pods_CoinPrice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoinPrice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 >>>>>>> origin/BTCui-finish-and-polish
+=======
+		1D425292777FFC0052DD5AC8 /* Pods-CoinPrice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoinPrice.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CoinPrice/Pods-CoinPrice.debug.xcconfig"; sourceTree = "<group>"; };
+		2B1BCEA110505505C8CD9E98 /* Pods-CoinPriceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoinPriceTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CoinPriceTests/Pods-CoinPriceTests.release.xcconfig"; sourceTree = "<group>"; };
+		D0D87B09CD2620134DCC09F3 /* Pods_CoinPrice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoinPrice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+>>>>>>> BTCui-finish-and-polish
 		D44758721FC503E000F66BA3 /* CoinPrice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoinPrice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D44758751FC503E000F66BA3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D447587A1FC503E000F66BA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -314,6 +324,7 @@
 			);
 			inputPaths = (
 <<<<<<< HEAD
+<<<<<<< HEAD
 				"${SRCROOT}/Pods/Target Support Files/Pods-CoinPrice/Pods-CoinPrice-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
@@ -335,6 +346,11 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 =======
 >>>>>>> origin/BTCui-finish-and-polish
+=======
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+>>>>>>> BTCui-finish-and-polish
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
