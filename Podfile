@@ -12,7 +12,7 @@ target 'CoinPrice' do
   pod 'Charts'
   
   pod 'IQKeyboardManagerSwift'
-  
+  pod 'Firebase/Core'
   target 'CoinPriceTests' do
     inherit! :search_paths
   end
