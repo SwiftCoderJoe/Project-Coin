@@ -54,6 +54,31 @@ class btcVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     /* IBActions */
     
     
+    @IBAction func day7(_ sender: Any) {
+        chartLength = 7
+        updateBTCchart {}
+    }
+
+    @IBAction func day25(_ sender: Any) {
+        chartLength = 25
+        updateBTCchart {}
+    }
+    
+    @IBAction func day50(_ sender: Any) {
+        chartLength = 50
+        updateBTCchart {}
+    }
+    
+    @IBAction func day100(_ sender: Any) {
+        chartLength = 100
+        updateBTCchart {}
+    }
+    
+    @IBAction func year1(_ sender: Any) {
+        chartLength = 365
+        updateBTCchart {}
+    }
+    
     @IBAction func pricePressed(_ sender: Any) {
         calcView.isHidden = true
         priceView.isHidden = !priceView.isHidden
@@ -153,6 +178,12 @@ class btcVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             return inputInt*1000000
         } else if outputType == "mBTC" {
             return inputInt*1000
+        } else if outputType == "USD" {
+            return ((inputInt*btcPrices["USD"]!*1000000).rounded())/1000000
+        } else if outputType == "GBP" {
+            return ((inputInt*btcPrices["GBP"]!*1000000).rounded())/1000000
+        } else if outputType == "EUR" {
+            return ((inputInt*btcPrices["EUR"]!*1000000).rounded())/1000000
         } else {
             return inputInt
         }
@@ -226,9 +257,10 @@ class btcVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         
     }
     func updateBTCchart(completion: @escaping () -> Void) {
-        let url = URL(string: "https://api.coindesk.com/v1/bpi/historical/close.json?start=\(self.pastString)&end=\(self.todayString)&currency=\(currentCurr)")!
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
+        pastString = dateFormatter.string(from: Calendar.current.date(byAdding: .day, value: -chartLength, to: Date())!)
+        let url = URL(string: "https://api.coindesk.com/v1/bpi/historical/close.json?start=\(self.pastString)&end=\(self.todayString)&currency=\(currentCurr)")!
         
         Alamofire.request(url).responseJSON {response in
             if let dict = response.value as? Dictionary<String, AnyObject> {
