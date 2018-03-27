@@ -3,7 +3,7 @@ import Charts
 import Alamofire
 import NVActivityIndicatorView
 
-
+var chartLength = 50
 var currentCurr = "USD"
 let symbols = ["USD":"$", "EUR":"€", "GBP":"£"]
 
@@ -25,7 +25,6 @@ class btcVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     let halfNums = ["USD":0, "EUR":1, "GBP":2,]
     let nums = ["USD":0, "EUR":1, "GBP":2, "uBTC":3, "mBTC":4, "Satoshi":5, "Bitcoin":6]
     let btcNums = ["uBTC":0, "mBTC":1, "Satoshi":2, "Bitcoin":3]
-    var chartLength = 50
     let todaysDate:NSDate = NSDate()
     let autoUpdateTime:Double = 60
     var lastEdited:String?
@@ -216,8 +215,8 @@ class btcVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         Alamofire.request(url).responseJSON {response in
             if let dict = response.value as? Dictionary<String, AnyObject> {
                 if let bpi = dict["bpi"] as? Dictionary<String, Double> {
-                    for i in 0..<self.chartLength {
-                        let btcAdd1:String = dateFormatter.string(from: Calendar.current.date(byAdding: .day, value: -(self.chartLength-i), to: Date())!)
+                    for i in 0..<chartLength {
+                        let btcAdd1:String = dateFormatter.string(from: Calendar.current.date(byAdding: .day, value: -(chartLength-i), to: Date())!)
                         let btcAdd2 = bpi[btcAdd1]
                         self.bitcoinHistory.append(btcAdd2!)
                     }
@@ -261,18 +260,21 @@ class btcVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         dateFormatter.dateFormat = "yyyy-MM-dd"
         pastString = dateFormatter.string(from: Calendar.current.date(byAdding: .day, value: -chartLength, to: Date())!)
         let url = URL(string: "https://api.coindesk.com/v1/bpi/historical/close.json?start=\(self.pastString)&end=\(self.todayString)&currency=\(currentCurr)")!
+        bitcoinHistory = []
         
         Alamofire.request(url).responseJSON {response in
             if let dict = response.value as? Dictionary<String, AnyObject> {
                 if let bpi = dict["bpi"] as? Dictionary<String, Double> {
-                    for i in 0..<self.chartLength {
-                        let btcAdd1:String = dateFormatter.string(from: Calendar.current.date(byAdding: .day, value: -(self.chartLength-i), to: Date())!)
+                    for i in 0..<chartLength {
+                        let btcAdd1:String = dateFormatter.string(from: Calendar.current.date(byAdding: .day, value: -(chartLength-i), to: Date())!)
                         let btcAdd2 = bpi[btcAdd1]
                         self.bitcoinHistory.append(btcAdd2!)
+                        
                     }
                 }
             }
         }
+        self.chartAsync()
         completion()
     }
     func updateGraph() {
@@ -282,8 +284,6 @@ class btcVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             lineChartEntry.append(value)
         }
         let line1 = LineChartDataSet(values: lineChartEntry, label: "")
-        line1.circleRadius = CGFloat(4.0)
-        line1.circleHoleRadius = CGFloat(2.0)
         line1.colors = [NSUIColor.blue]
         line1.drawCirclesEnabled = false
         let xAxis = btcChart.xAxis
@@ -292,7 +292,6 @@ class btcVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         line1.drawValuesEnabled = false
         line1.drawFilledEnabled = true
         line1.highlightColor = UIColor.black
-        line1.mode = (line1.mode == .cubicBezier) ? .linear : .cubicBezier
         let data = LineChartData()
         data.addDataSet(line1)
         btcChart.data = data
@@ -323,7 +322,8 @@ class btcVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
     
     func chartAsync() {
-        if self.bitcoinHistory.count != self.chartLength || self.btcPrices.count == 0 {
+        if self.bitcoinHistory.count != chartLength || self.btcPrices.count == 0 {
+            print("Did not load with parameters: Target Length: \(chartLength). Actual length: \(self.bitcoinHistory.count). Number of stored BTC prices: \(self.btcPrices.count)")
             if !chartLoad.isAnimating {
                 chartLoad.startAnimating()
             }

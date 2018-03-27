@@ -335,7 +335,7 @@
                                 </constraints>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e3J-ie-2TR">
-                                <rect key="frame" x="0.0" y="592" width="375" height="220"/>
+                                <rect key="frame" x="0.0" y="447" width="375" height="220"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7bs-ux-TUw">
                                         <rect key="frame" x="0.0" y="45" width="375" height="175"/>
@@ -350,7 +350,7 @@
                                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1ia-El-09Q" id="Kd7-nu-Ppn">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <color key="backgroundColor" red="0.17254901959999999" green="0.69019607839999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </tableViewCellContentView>
@@ -402,11 +402,6 @@
                             <constraint firstItem="dKc-1H-amG" firstAttribute="trailing" secondItem="e3J-ie-2TR" secondAttribute="trailing" id="yxd-xS-I78"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dKc-1H-amG"/>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="e3J-ie-2TR"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
                         <outlet property="btcChart" destination="p7I-cU-zBw" id="XZd-0X-3kz"/>
