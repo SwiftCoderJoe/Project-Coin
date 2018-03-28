@@ -3,7 +3,7 @@ import Charts
 import Alamofire
 import NVActivityIndicatorView
 
-
+var chartLength = 50
 var currentCurr = "USD"
 let symbols = ["USD":"$", "EUR":"€", "GBP":"£"]
 
@@ -18,15 +18,16 @@ class btcVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     var bitcoinHistory = [Double]()
     typealias DownloadComplete = () -> ()
     private var currBtnPressed = ""
-    private var btcPrice: Double = -1
+    var btcPrices = [String:Double]()
     private let currencies = ["USD", "EUR", "GBP"]
     let halfCurrencies = ["USD", "EUR", "GBP", "uBTC", "mBTC", "Satoshi", "Bitcoin"]
     let btcCurrencies = ["uBTC", "mBTC", "Satoshi", "Bitcoin"]
     let halfNums = ["USD":0, "EUR":1, "GBP":2,]
     let nums = ["USD":0, "EUR":1, "GBP":2, "uBTC":3, "mBTC":4, "Satoshi":5, "Bitcoin":6]
     let btcNums = ["uBTC":0, "mBTC":1, "Satoshi":2, "Bitcoin":3]
-    var chartLength = 50
     let todaysDate:NSDate = NSDate()
+    let autoUpdateTime:Double = 60
+    var lastEdited:String?
     
     
     /* IBOutlets */
@@ -46,11 +47,46 @@ class btcVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var btcChart: LineChartView!
     @IBOutlet weak var calcOutput: AllowedCharsTextField!
     @IBOutlet weak var calcInput: AllowedCharsTextField!
-    
+    @IBOutlet weak var d50: UIButton!
+    @IBOutlet weak var y1: UIButton!
+    @IBOutlet weak var d100: UIButton!
+    @IBOutlet weak var d25: UIButton!
+    @IBOutlet weak var d7: UIButton!
     
     
     /* IBActions */
     
+    
+    @IBAction func day7(_ sender: Any) {
+        chartLength = 7
+        updateBTCchart {}
+        dayColorUpdate(day: 7)
+        
+    }
+
+    @IBAction func day25(_ sender: Any) {
+        chartLength = 25
+        updateBTCchart {}
+        dayColorUpdate(day: 25)
+    }
+    
+    @IBAction func day50(_ sender: Any) {
+        chartLength = 50
+        updateBTCchart {}
+        dayColorUpdate(day: 50)
+    }
+    
+    @IBAction func day100(_ sender: Any) {
+        chartLength = 100
+        updateBTCchart {}
+        dayColorUpdate(day: 100)
+    }
+    
+    @IBAction func year1(_ sender: Any) {
+        chartLength = 365
+        updateBTCchart {}
+        dayColorUpdate(day: 365)
+    }
     
     @IBAction func pricePressed(_ sender: Any) {
         calcView.isHidden = true
@@ -109,21 +145,59 @@ class btcVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     
     @IBAction func inputEdited(_ sender: Any) {
-        if let i = calcInput.text {
-            calcOutput.text = cnvrtTo(inputInt: Double(i)!, inputType: calcCurrencyPick1.currentTitle!, outputType: calcCurrencyPick2.currentTitle!)
+        if let l = calcInput.text {
+            if let i = Double(l) {
+                calcOutput.text = cnvrtTo(inputInt: i, inputType: calcCurrencyPick1.currentTitle!, outputType:  calcCurrencyPick2.currentTitle!)
+            }
+            lastEdited = "Input"
         }
     }
     
     @IBAction func outputEdited(_ sender: Any) {
+        if let l = calcOutput.text {
+            if let i = Double(l) {
+                calcInput.text = cnvrtTo(inputInt: i, inputType: calcCurrencyPick2.currentTitle!, outputType: calcCurrencyPick1.currentTitle!)
+            }
+            lastEdited = "Output"
+        }
     }
     
-    func cnvrtTo(inputInt:Double, inputType:String, outputType:String) -> String{
+    func dayColorUpdate(day:Int) {
+        d7.backgroundColor = hexStringToUIColor(hex: "#1D76AB")
+        d25.backgroundColor = hexStringToUIColor(hex: "#1D76AB")
+        d50.backgroundColor = hexStringToUIColor(hex: "#1D76AB")
+        d100.backgroundColor = hexStringToUIColor(hex: "#1D76AB")
+        y1.backgroundColor = hexStringToUIColor(hex: "#1D76AB")
+        if day == 7 {
+            d7.backgroundColor = hexStringToUIColor(hex: "#2CB0FF")
+        }
+        if day == 25 {
+            d25.backgroundColor = hexStringToUIColor(hex: "#2CB0FF")
+        }
+        if day == 50 {
+            d50.backgroundColor = hexStringToUIColor(hex: "#2CB0FF")
+        }
+        if day == 100 {
+            d100.backgroundColor = hexStringToUIColor(hex: "#2CB0FF")
+        }
+        if day == 365 {
+            y1.backgroundColor = hexStringToUIColor(hex: "#2CB0FF")
+        }
+    }
+    
+    func cnvrtTo(inputInt:Double, inputType:String, outputType:String) -> String {
         if inputType == "Satoshi" {
             return String(cnvrtToLast(inputInt: inputInt/100000000, outputType: outputType))
         } else if inputType == "mBTC" {
             return String(cnvrtToLast(inputInt: inputInt/1000, outputType: outputType))
         } else if inputType == "uBTC" {
             return String(cnvrtToLast(inputInt: inputInt/1000000, outputType: outputType))
+        } else if inputType == "USD" {
+            return String(cnvrtToLast(inputInt: (((inputInt/btcPrices["USD"]!*1000000).rounded())/1000000), outputType: outputType))
+        } else if inputType == "GBP" {
+            return String(cnvrtToLast(inputInt: (((inputInt/btcPrices["GBP"]!*1000000).rounded())/1000000), outputType: outputType))
+        } else if inputType == "EUR" {
+            return String(cnvrtToLast(inputInt: (((inputInt/btcPrices["EUR"]!*1000000).rounded())/1000000), outputType: outputType))
         } else {
             return String(cnvrtToLast(inputInt: inputInt, outputType: outputType))
         }
@@ -136,19 +210,31 @@ class btcVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             return inputInt*1000000
         } else if outputType == "mBTC" {
             return inputInt*1000
+        } else if outputType == "USD" {
+            return ((inputInt*btcPrices["USD"]!*1000000).rounded())/1000000
+        } else if outputType == "GBP" {
+            return ((inputInt*btcPrices["GBP"]!*1000000).rounded())/1000000
+        } else if outputType == "EUR" {
+            return ((inputInt*btcPrices["EUR"]!*1000000).rounded())/1000000
         } else {
             return inputInt
         }
     }
     
-    func downloadBTCdata(completion: @escaping () -> Void) {
+    func downloadBTCdataFirst() {
         var url = URL(string: "https://api.coindesk.com/v1/bpi/currentprice.json")!
         Alamofire.request(url).responseJSON { response in
             
             if let dict = response.value as? Dictionary<String, AnyObject> {
                 if let bpi = dict["bpi"] as? Dictionary<String, AnyObject> {
-                    if let usd = bpi[currentCurr] as? Dictionary<String, AnyObject> {
-                        self.btcPrice = usd["rate_float"]! as! Double
+                    if let usd = bpi["USD"] as? Dictionary<String, AnyObject> {
+                        self.btcPrices["USD"] = usd["rate_float"] as? Double
+                    }
+                    if let eur = bpi["EUR"] as? Dictionary<String, AnyObject> {
+                        self.btcPrices["EUR"] = eur["rate_float"]! as? Double
+                    }
+                    if let gbp = bpi["GBP"] as? Dictionary<String, AnyObject> {
+                        self.btcPrices["GBP"] = gbp["rate_float"]! as? Double
                     }
                 }
             }
@@ -162,14 +248,66 @@ class btcVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         Alamofire.request(url).responseJSON {response in
             if let dict = response.value as? Dictionary<String, AnyObject> {
                 if let bpi = dict["bpi"] as? Dictionary<String, Double> {
-                    for i in 0..<self.chartLength {
-                        let btcAdd1:String = dateFormatter.string(from: Calendar.current.date(byAdding: .day, value: -(self.chartLength-i), to: Date())!)
+                    for i in 0..<chartLength {
+                        let btcAdd1:String = dateFormatter.string(from: Calendar.current.date(byAdding: .day, value: -(chartLength-i), to: Date())!)
                         let btcAdd2 = bpi[btcAdd1]
                         self.bitcoinHistory.append(btcAdd2!)
                     }
                 }
             }
         }
+    }
+    
+    func updateBTCData() {
+        guard chartLoad.isAnimating else {
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
+                self.updateBTCData()
+            }
+            return
+        }
+        btcPrices = [:]
+        let url = URL(string: "https://api.coindesk.com/v1/bpi/currentprice.json")!
+        Alamofire.request(url).responseJSON { response in
+            
+            if let dict = response.value as? Dictionary<String, AnyObject> {
+                if let bpi = dict["bpi"] as? Dictionary<String, AnyObject> {
+                    if let usd = bpi["USD"] as? Dictionary<String, AnyObject> {
+                        self.btcPrices["USD"] = usd["rate_float"] as? Double
+                    }
+                    if let eur = bpi["EUR"] as? Dictionary<String, AnyObject> {
+                        self.btcPrices["EUR"] = eur["rate_float"]! as? Double
+                    }
+                    if let gbp = bpi["GBP"] as? Dictionary<String, AnyObject> {
+                        self.btcPrices["GBP"] = gbp["rate_float"]! as? Double
+                    }
+                }
+            }
+        }
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()) {
+            self.chartAsync()
+        }
+        
+    }
+    func updateBTCchart(completion: @escaping () -> Void) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        pastString = dateFormatter.string(from: Calendar.current.date(byAdding: .day, value: -chartLength, to: Date())!)
+        let url = URL(string: "https://api.coindesk.com/v1/bpi/historical/close.json?start=\(self.pastString)&end=\(self.todayString)&currency=\(currentCurr)")!
+        bitcoinHistory = []
+        
+        Alamofire.request(url).responseJSON {response in
+            if let dict = response.value as? Dictionary<String, AnyObject> {
+                if let bpi = dict["bpi"] as? Dictionary<String, Double> {
+                    for i in 0..<chartLength {
+                        let btcAdd1:String = dateFormatter.string(from: Calendar.current.date(byAdding: .day, value: -(chartLength-i), to: Date())!)
+                        let btcAdd2 = bpi[btcAdd1]
+                        self.bitcoinHistory.append(btcAdd2!)
+                        
+                    }
+                }
+            }
+        }
+        self.chartAsync()
         completion()
     }
     func updateGraph() {
@@ -179,8 +317,6 @@ class btcVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             lineChartEntry.append(value)
         }
         let line1 = LineChartDataSet(values: lineChartEntry, label: "")
-        line1.circleRadius = CGFloat(4.0)
-        line1.circleHoleRadius = CGFloat(2.0)
         line1.colors = [NSUIColor.blue]
         line1.drawCirclesEnabled = false
         let xAxis = btcChart.xAxis
@@ -189,7 +325,6 @@ class btcVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         line1.drawValuesEnabled = false
         line1.drawFilledEnabled = true
         line1.highlightColor = UIColor.black
-        line1.mode = (line1.mode == .cubicBezier) ? .linear : .cubicBezier
         let data = LineChartData()
         data.addDataSet(line1)
         btcChart.data = data
@@ -219,8 +354,9 @@ class btcVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         )
     }
     
-    func chartAsync() -> Void {
-        if self.bitcoinHistory.count != self.chartLength || self.btcPrice == -1 {
+    func chartAsync() {
+        if self.bitcoinHistory.count != chartLength || self.btcPrices.count == 0 {
+            print("Did not load with parameters: Target Length: \(chartLength). Actual length: \(self.bitcoinHistory.count). Number of stored BTC prices: \(self.btcPrices.count)")
             if !chartLoad.isAnimating {
                 chartLoad.startAnimating()
             }
@@ -229,7 +365,7 @@ class btcVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             }
             btcChart.isHidden = true
         } else {
-            btcPriceLabel.text = "\(symbols[currentCurr]!)\(btcPrice)"
+            btcPriceLabel.text = "\(symbols[currentCurr]!)\(btcPrices[currentCurr]!)"
             btcChart.isHidden = false
             updateGraph()
             chartLoad.isHidden = true
@@ -276,16 +412,36 @@ class btcVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         calcView.isUserInteractionEnabled = true
+        var l = false
         if currBtnPressed == "calc1" {
             calcCurrencyPick1.setTitle(halfCurrencies[indexPath.row], for: UIControlState.normal)
+            l = true
         } else if currBtnPressed == "calc2"{
             calcCurrencyPick2.setTitle(btcCurrencies[indexPath.row], for: UIControlState.normal)
+            l = true
         } else {
             priceCurrencyPick.setTitle(currencies[indexPath.row], for: UIControlState.normal)
             currentCurr = currencies[indexPath.row]
-            btcPrice = -1
+            bitcoinHistory = []
+            updateBTCchart {}
             chartAsync()
-            downloadBTCdata {}
+        }
+        if l {
+            if let i = lastEdited {
+                if i == "Input" {
+                    if let k = calcInput.text {
+                        if let j = Double(k) {
+                            calcOutput.text = cnvrtTo(inputInt: j, inputType: calcCurrencyPick1.currentTitle!, outputType:  calcCurrencyPick2.currentTitle!)
+                        }
+                    }
+                } else {
+                    if let k = calcOutput.text {
+                        if let j = Double(k) {
+                            calcInput.text = cnvrtTo(inputInt: j, inputType: calcCurrencyPick2.currentTitle!, outputType:  calcCurrencyPick1.currentTitle!)
+                        }
+                    }
+                }
+            }
         }
         currView.isHidden = true
     }
@@ -310,7 +466,7 @@ class btcVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         currencyPick.tableFooterView = UIView()
         chartLoad.color = UIColor.darkGray
         currencyPick.register(UITableViewCell.self, forCellReuseIdentifier: "cellReuseIdentifier")
-        downloadBTCdata{}
+        downloadBTCdataFirst()
         btcChart.isHidden = true
         let marker =  BalloonMarker(color: hexStringToUIColor(hex: "#111111"), font: UIFont.systemFont(ofSize: 12), textColor: hexStringToUIColor(hex: "#999999"), insets: UIEdgeInsetsMake(8.0, 8.0, 20.0, 8.0))
         marker.image = UIImage(named: "dashboard-point_heart")
@@ -319,6 +475,9 @@ class btcVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         self.btcChart.marker = marker
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()) {
             self.chartAsync()
+        }
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+autoUpdateTime) {
+            self.updateBTCData()
         }
     }
     

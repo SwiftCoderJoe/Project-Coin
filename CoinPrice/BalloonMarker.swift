@@ -102,7 +102,7 @@ public class BalloonMarker: MarkerImage {
     public override func refreshContent(entry: ChartDataEntry, highlight: Highlight) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM-dd-YYYY"
-        let labelDate = dateFormatter.string(from: Calendar.current.date(byAdding: .day, value: Int(-(boi - entry.x)), to: Date())!)
+        let labelDate = dateFormatter.string(from: Calendar.current.date(byAdding: .day, value: Int(-(chartLength - Int(entry.x))), to: Date())!)
         setLabel("\(symbols[currentCurr]!)\(entry.y)\n\(labelDate)")
     }
     
@@ -125,3 +125,4 @@ public class BalloonMarker: MarkerImage {
     }
     
 }
+
