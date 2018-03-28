@@ -47,7 +47,11 @@ class btcVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var btcChart: LineChartView!
     @IBOutlet weak var calcOutput: AllowedCharsTextField!
     @IBOutlet weak var calcInput: AllowedCharsTextField!
-    
+    @IBOutlet weak var d50: UIButton!
+    @IBOutlet weak var y1: UIButton!
+    @IBOutlet weak var d100: UIButton!
+    @IBOutlet weak var d25: UIButton!
+    @IBOutlet weak var d7: UIButton!
     
     
     /* IBActions */
@@ -56,26 +60,32 @@ class btcVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBAction func day7(_ sender: Any) {
         chartLength = 7
         updateBTCchart {}
+        dayColorUpdate(day: 7)
+        
     }
 
     @IBAction func day25(_ sender: Any) {
         chartLength = 25
         updateBTCchart {}
+        dayColorUpdate(day: 25)
     }
     
     @IBAction func day50(_ sender: Any) {
         chartLength = 50
         updateBTCchart {}
+        dayColorUpdate(day: 50)
     }
     
     @IBAction func day100(_ sender: Any) {
         chartLength = 100
         updateBTCchart {}
+        dayColorUpdate(day: 100)
     }
     
     @IBAction func year1(_ sender: Any) {
         chartLength = 365
         updateBTCchart {}
+        dayColorUpdate(day: 365)
     }
     
     @IBAction func pricePressed(_ sender: Any) {
@@ -149,6 +159,29 @@ class btcVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
                 calcInput.text = cnvrtTo(inputInt: i, inputType: calcCurrencyPick2.currentTitle!, outputType: calcCurrencyPick1.currentTitle!)
             }
             lastEdited = "Output"
+        }
+    }
+    
+    func dayColorUpdate(day:Int) {
+        d7.backgroundColor = hexStringToUIColor(hex: "#1D76AB")
+        d25.backgroundColor = hexStringToUIColor(hex: "#1D76AB")
+        d50.backgroundColor = hexStringToUIColor(hex: "#1D76AB")
+        d100.backgroundColor = hexStringToUIColor(hex: "#1D76AB")
+        y1.backgroundColor = hexStringToUIColor(hex: "#1D76AB")
+        if day == 7 {
+            d7.backgroundColor = hexStringToUIColor(hex: "#2CB0FF")
+        }
+        if day == 25 {
+            d25.backgroundColor = hexStringToUIColor(hex: "#2CB0FF")
+        }
+        if day == 50 {
+            d50.backgroundColor = hexStringToUIColor(hex: "#2CB0FF")
+        }
+        if day == 100 {
+            d100.backgroundColor = hexStringToUIColor(hex: "#2CB0FF")
+        }
+        if day == 365 {
+            y1.backgroundColor = hexStringToUIColor(hex: "#2CB0FF")
         }
     }
     
