@@ -90,7 +90,7 @@ class btcVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBAction func pricePressed(_ sender: Any) {
         calcView.isHidden = true
-        priceView.isHidden = !priceView.isHidden
+        priceView.isHidden = false
         priceBTN.backgroundColor = hexStringToUIColor(hex: "#2CB0FF")
         calcBTN.backgroundColor = hexStringToUIColor(hex: "#1D76AB")
     }
