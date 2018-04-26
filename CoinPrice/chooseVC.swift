@@ -11,7 +11,7 @@ import UIKit
 class chooserVC:UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var table: UITableView!
     func segueMyDude(identifier: String) {
-        self.performSegue(withIdentifier: "0", sender: nil)
+        performSegue(withIdentifier: "0", sender: nil)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
