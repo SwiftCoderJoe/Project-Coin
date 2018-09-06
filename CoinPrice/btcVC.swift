@@ -1,3 +1,4 @@
+import Foundation
 import UIKit
 import Charts
 import Alamofire
@@ -56,6 +57,10 @@ class btcVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     /* IBActions */
     
+
+    @IBAction func backBtnPressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
     
     @IBAction func day7(_ sender: Any) {
         chartLength = 7

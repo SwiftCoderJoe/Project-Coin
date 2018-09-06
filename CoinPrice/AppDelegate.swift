@@ -5,7 +5,7 @@
 //  Created by Joey C on 11/21/17.
 //  Copyright © 2017 BytleBit. All rights reserved.
 //
-
+import Foundation
 import UIKit
 import IQKeyboardManagerSwift
 

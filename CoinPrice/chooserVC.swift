@@ -8,28 +8,30 @@
 var cryptos = ["Bitcoin"]
 import Foundation
 import UIKit
-class chooserVC:UIViewController, UITableViewDelegate, UITableViewDataSource {
+class coinChooserVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var table: UITableView!
     func segueMyDude(identifier: String) {
-        performSegue(withIdentifier: "0", sender: nil)
+        let id = "oof"
+        self.performSegue(withIdentifier: id, sender: self)
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         table.dataSource = self
         table.delegate = self
         table.register(vcChooserCell.self, forCellReuseIdentifier: "LabelCell")
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LabelCell", for: indexPath) as! vcChooserCell
-        print("bro")
-        let fruitName = cryptos[indexPath.row]
-        cell.name?.text = fruitName
+        print(cell)
+        let coinName = cryptos[indexPath.row]
+        cell.name?.text = coinName
         //cell.image?.image = UIImage(named: fruitName)
         
         return cell
     }
     
-    // MARK: - UITableViewDataSource
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -40,7 +42,7 @@ class chooserVC:UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let identifier = indexPath.row
-        chooserVC().segueMyDude(identifier: String(identifier))
+        segueMyDude(identifier: String(identifier))
     }
 
 }
