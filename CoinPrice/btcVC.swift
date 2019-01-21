@@ -109,7 +109,7 @@ class btcVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         calcView.isUserInteractionEnabled = false
         currencyPick.reloadData()
         let indexpath = IndexPath(row: nums[calcCurrencyPick1.currentTitle!]!, section: 0)
-        currencyPick.selectRow(at: indexpath, animated: false, scrollPosition: UITableViewScrollPosition.none)
+        currencyPick.selectRow(at: indexpath, animated: false, scrollPosition: UITableView.ScrollPosition.none)
         currView.isHidden = false
     }
     
@@ -121,7 +121,7 @@ class btcVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         lastCurrPressed = "calc2"
         calcView.isUserInteractionEnabled = false
         let indexpath = IndexPath(row: btcNums[calcCurrencyPick2.currentTitle!]!, section: 0)
-        currencyPick.selectRow(at: indexpath, animated: false, scrollPosition: UITableViewScrollPosition.none)
+        currencyPick.selectRow(at: indexpath, animated: false, scrollPosition: UITableView.ScrollPosition.none)
         currView.isHidden = false
     }
     
@@ -133,7 +133,7 @@ class btcVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         lastCurrPressed = "price"
         calcView.isUserInteractionEnabled = false
         let indexpath = IndexPath(row: halfNums[currentCurr]!, section: 0)
-        currencyPick.selectRow(at: indexpath, animated: false, scrollPosition: UITableViewScrollPosition.none)
+        currencyPick.selectRow(at: indexpath, animated: false, scrollPosition: UITableView.ScrollPosition.none)
         currView.isHidden = false
     }
     
@@ -419,13 +419,13 @@ class btcVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         calcView.isUserInteractionEnabled = true
         var l = false
         if currBtnPressed == "calc1" {
-            calcCurrencyPick1.setTitle(halfCurrencies[indexPath.row], for: UIControlState.normal)
+            calcCurrencyPick1.setTitle(halfCurrencies[indexPath.row], for: UIControl.State.normal)
             l = true
         } else if currBtnPressed == "calc2"{
-            calcCurrencyPick2.setTitle(btcCurrencies[indexPath.row], for: UIControlState.normal)
+            calcCurrencyPick2.setTitle(btcCurrencies[indexPath.row], for: UIControl.State.normal)
             l = true
         } else {
-            priceCurrencyPick.setTitle(currencies[indexPath.row], for: UIControlState.normal)
+            priceCurrencyPick.setTitle(currencies[indexPath.row], for: UIControl.State.normal)
             currentCurr = currencies[indexPath.row]
             bitcoinHistory = []
             updateBTCchart {}
@@ -473,7 +473,7 @@ class btcVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         currencyPick.register(UITableViewCell.self, forCellReuseIdentifier: "cellReuseIdentifier")
         downloadBTCdataFirst()
         btcChart.isHidden = true
-        let marker =  BalloonMarker(color: hexStringToUIColor(hex: "#111111"), font: UIFont.systemFont(ofSize: 12), textColor: hexStringToUIColor(hex: "#999999"), insets: UIEdgeInsetsMake(8.0, 8.0, 20.0, 8.0))
+        let marker =  BalloonMarker(color: hexStringToUIColor(hex: "#111111"), font: UIFont.systemFont(ofSize: 12), textColor: hexStringToUIColor(hex: "#999999"), insets: UIEdgeInsets.init(top: 8.0, left: 8.0, bottom: 20.0, right: 8.0))
         marker.image = UIImage(named: "dashboard-point_heart")
         marker.size = CGSize(width: 50, height: 50)
         marker.chartView = self.btcChart
