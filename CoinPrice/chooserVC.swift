@@ -9,28 +9,35 @@ var cryptos = ["Bitcoin"]
 import Foundation
 import UIKit
 class coinChooserVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    @IBOutlet weak var table: UITableView!
+    @IBOutlet weak var tableView: UITableView!
     func segueMyDude(identifier: String) {
         let id = "oof"
         self.performSegue(withIdentifier: id, sender: self)
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        table.dataSource = self
-        table.delegate = self
-        table.register(vcChooserCell.self, forCellReuseIdentifier: "LabelCell")
+    func viewDidAppear() {
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(vcChooserCell.self, forCellReuseIdentifier: "LabelCell")
     }
     
+    override func viewDidLoad() {
+        tableView.dataSource = self
+        tableView.delegate = self
+        print(tableView.dataSource as Any)
+        tableView.register(vcChooserCell.self, forCellReuseIdentifier: "labelCell")
+    }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LabelCell", for: indexPath) as! vcChooserCell
         print(cell)
+        print("Loading...")
         let coinName = cryptos[indexPath.row]
-        cell.name?.text = coinName
-        //cell.image?.image = UIImage(named: fruitName)
+        cell.name.text = coinName
+        cell.cryptoImage.image = UIImage(named: cryptos[indexPath.row])
         
         return cell
     }
+    
     
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -41,6 +48,7 @@ class coinChooserVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         return cryptos.count
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("selected")
         let identifier = indexPath.row
         segueMyDude(identifier: String(identifier))
     }
@@ -48,6 +56,7 @@ class coinChooserVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
 }
 
 class vcChooserCell:UITableViewCell {
+    @IBOutlet weak var cryptoImage: UIImageView!
     @IBOutlet weak var name: UILabel!
 }
 
