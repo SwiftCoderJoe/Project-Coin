@@ -59,7 +59,8 @@ class btcVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
 
     @IBAction func backBtnPressed(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        self.performSegue(withIdentifier: "oofUnwind", sender: self)
+        //dismiss(animated: true, completion: nil)
     }
     
     @IBAction func day7(_ sender: Any) {
@@ -166,7 +167,7 @@ class btcVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             lastEdited = "Output"
         }
     }
-    
+        
     func dayColorUpdate(day:Int) {
         d7.backgroundColor = hexStringToUIColor(hex: "#1D76AB")
         d25.backgroundColor = hexStringToUIColor(hex: "#1D76AB")

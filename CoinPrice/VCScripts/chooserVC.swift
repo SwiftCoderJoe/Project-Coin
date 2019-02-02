@@ -10,6 +10,24 @@ import Foundation
 import UIKit
 class coinChooserVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
+    
+    @IBAction func returnFromSegueActions(sender: UIStoryboardSegue) {
+        
+    }
+    
+    override func segueForUnwinding(to toViewController: UIViewController, from fromViewController: UIViewController, identifier: String?) -> UIStoryboardSegue {
+        if let id = identifier{
+            if id == "oofUnwind" {
+                let unwindSegue = SlideUnwindSegue(identifier: id, source: fromViewController, destination: toViewController, performHandler: { () -> Void in
+                    
+                })
+                return unwindSegue
+            }
+        }
+        
+        return super.segueForUnwinding(to: toViewController, from: fromViewController, identifier: identifier)!
+    }
+    
     func segueMyDude(identifier: String) {
         let id = "oof"
         self.performSegue(withIdentifier: id, sender: self)
