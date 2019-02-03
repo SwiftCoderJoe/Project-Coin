@@ -5,7 +5,7 @@
 //  Created by Kids on 4/3/18.
 //  Copyright © 2018 BytleBit. All rights reserved.
 //
-var cryptos = ["Bitcoin"]
+var cryptos = ["Bitcoin", "Bitcoin Gold"]
 import Foundation
 import UIKit
 class coinChooserVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -29,8 +29,7 @@ class coinChooserVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     }
     
     func segueMyDude(identifier: String) {
-        let id = "oof"
-        self.performSegue(withIdentifier: id, sender: self)
+        self.performSegue(withIdentifier: identifier, sender: self)
     }
     
     func viewDidAppear() {
@@ -47,8 +46,6 @@ class coinChooserVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LabelCell", for: indexPath) as! vcChooserCell
-        print(cell)
-        print("Loading...")
         let coinName = cryptos[indexPath.row]
         cell.name.text = coinName
         cell.cryptoImage.image = UIImage(named: cryptos[indexPath.row])
@@ -66,7 +63,6 @@ class coinChooserVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         return cryptos.count
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("selected")
         let identifier = indexPath.row
         segueMyDude(identifier: String(identifier))
     }

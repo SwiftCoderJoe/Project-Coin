@@ -49,19 +49,19 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bitcoin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E85-TN-4VD">
-                                                    <rect key="frame" x="20" y="11" width="145.5" height="128"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                                    <rect key="frame" x="20" y="11" width="117" height="128"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bitcoin.svg" translatesAutoresizingMaskIntoConstraints="NO" id="24l-c0-bvP">
-                                                    <rect key="frame" x="185.5" y="11" width="128" height="128"/>
+                                                    <rect key="frame" x="157" y="11" width="128" height="128"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="24l-c0-bvP" secondAttribute="height" multiplier="1:1" id="Oa2-sg-xaZ"/>
                                                     </constraints>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="240" verticalHuggingPriority="240" horizontalCompressionResistancePriority="700" verticalCompressionResistancePriority="700" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e4d-PX-IOA" userLabel="BackBTN">
-                                                    <rect key="frame" x="251" y="11" width="128" height="128"/>
+                                                    <rect key="frame" x="281" y="21" width="108" height="108"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="e4d-PX-IOA" secondAttribute="height" multiplier="1:1" id="6Hy-PN-fdF"/>
                                                     </constraints>
@@ -70,11 +70,11 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottomMargin" secondItem="24l-c0-bvP" secondAttribute="bottom" id="2Qq-kO-paP"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="e4d-PX-IOA" secondAttribute="trailing" constant="15" id="Pug-69-HQc"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="e4d-PX-IOA" secondAttribute="trailing" constant="5" id="Pug-69-HQc"/>
                                                 <constraint firstItem="24l-c0-bvP" firstAttribute="leading" secondItem="E85-TN-4VD" secondAttribute="trailing" constant="20" id="Si6-th-ibA"/>
                                                 <constraint firstItem="E85-TN-4VD" firstAttribute="leading" secondItem="N2U-Fx-jce" secondAttribute="leadingMargin" id="V6v-Ub-q8x"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="e4d-PX-IOA" secondAttribute="bottom" id="ZQu-JR-ISL"/>
-                                                <constraint firstItem="e4d-PX-IOA" firstAttribute="top" secondItem="N2U-Fx-jce" secondAttribute="topMargin" id="aeO-eO-wWT"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="e4d-PX-IOA" secondAttribute="bottom" constant="10" id="ZQu-JR-ISL"/>
+                                                <constraint firstItem="e4d-PX-IOA" firstAttribute="top" secondItem="N2U-Fx-jce" secondAttribute="topMargin" constant="10" id="aeO-eO-wWT"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="E85-TN-4VD" secondAttribute="bottom" id="i5Y-vg-HI9"/>
                                                 <constraint firstItem="24l-c0-bvP" firstAttribute="top" secondItem="N2U-Fx-jce" secondAttribute="topMargin" id="ldh-Pe-9vx"/>
                                                 <constraint firstItem="E85-TN-4VD" firstAttribute="top" secondItem="N2U-Fx-jce" secondAttribute="topMargin" id="qy8-4d-32i"/>
@@ -110,7 +110,7 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="B0k-SD-bTe" id="OjY-2I-32t"/>
-                        <segue destination="BYZ-38-t0r" kind="custom" identifier="oof" customClass="SlideSegue" customModule="CoinPrice" customModuleProvider="target" id="YNg-ie-Iea"/>
+                        <segue destination="BYZ-38-t0r" kind="custom" identifier="0" customClass="SlideSegue" customModule="CoinPrice" customModuleProvider="target" id="YNg-ie-Iea"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gzc-yg-o0f" userLabel="First Responder" sceneMemberID="firstResponder"/>
