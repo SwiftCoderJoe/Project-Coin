@@ -87,24 +87,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0EB8E6422206909E0097F1EA /* VCScripts */ = {
-			isa = PBXGroup;
-			children = (
-				D4F1DA111FCCAD7100B07419 /* btcVC.swift */,
-			);
-			path = VCScripts;
-			sourceTree = "<group>";
-		};
-		0EB8E643220690E80097F1EA /* ChartExtras */ = {
-			isa = PBXGroup;
-			children = (
-				D47A44CB201AABA10029EA8A /* BalloonMarker.swift */,
-				0E6445062017913700965433 /* DateFormatter.swift */,
-				D4DF15952023CA1D004D54D3 /* CharLimit.swift */,
-			);
-			path = ChartExtras;
-			sourceTree = "<group>";
-		};
 		63C2644A183DAC2BBF820463 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -155,8 +137,10 @@
 				D447587C1FC503E000F66BA3 /* Assets.xcassets */,
 				D447587E1FC503E000F66BA3 /* LaunchScreen.storyboard */,
 				D44758811FC503E000F66BA3 /* Info.plist */,
-				0EB8E6422206909E0097F1EA /* VCScripts */,
-				0EB8E643220690E80097F1EA /* ChartExtras */,
+				D4F1DA111FCCAD7100B07419 /* btcVC.swift */,
+				D47A44CB201AABA10029EA8A /* BalloonMarker.swift */,
+				0E6445062017913700965433 /* DateFormatter.swift */,
+				D4DF15952023CA1D004D54D3 /* CharLimit.swift */,
 			);
 			path = CoinPrice;
 			sourceTree = "<group>";
