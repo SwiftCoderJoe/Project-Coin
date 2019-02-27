@@ -4,11 +4,8 @@ import Charts
 import Alamofire
 import NVActivityIndicatorView
 
-var currentCurr = "USD"
-let symbols = ["USD":"$", "EUR":"€", "GBP":"£"]
-var chartLength = 50
 
-class btcVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class btgVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     
     /* Global variable declaration */
@@ -57,7 +54,7 @@ class btcVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     /* IBActions */
     
-
+    
     @IBAction func backBtnPressed(_ sender: Any) {
         self.performSegue(withIdentifier: "oofUnwind", sender: self)
         //dismiss(animated: true, completion: nil)
@@ -69,7 +66,7 @@ class btcVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         dayColorUpdate(day: 7)
         
     }
-
+    
     @IBAction func day25(_ sender: Any) {
         chartLength = 25
         updateBTCchart {}
@@ -143,7 +140,7 @@ class btcVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         priceView.isHidden = true
         priceBTN.backgroundColor = hexStringToUIColor(hex: "#1D76AB")
         calcBTN.backgroundColor = hexStringToUIColor(hex: "#2CB0FF")
-
+        
     }
     
     
@@ -167,7 +164,7 @@ class btcVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             lastEdited = "Output"
         }
     }
-        
+    
     func dayColorUpdate(day:Int) {
         d7.backgroundColor = hexStringToUIColor(hex: "#1D76AB")
         d25.backgroundColor = hexStringToUIColor(hex: "#1D76AB")
@@ -228,20 +225,14 @@ class btcVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
     
     func downloadBTCdataFirst() {
-        var url = URL(string: "https://api.coindesk.com/v1/bpi/currentprice.json")!
+        btcPrices = [:]
+        var url = URL(string: "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin-gold&vs_currencies=usd,gbp,eur")!
         Alamofire.request(url).responseJSON { response in
-            
             if let dict = response.value as? Dictionary<String, AnyObject> {
-                if let bpi = dict["bpi"] as? Dictionary<String, AnyObject> {
-                    if let usd = bpi["USD"] as? Dictionary<String, AnyObject> {
-                        self.btcPrices["USD"] = usd["rate_float"] as? Double
-                    }
-                    if let eur = bpi["EUR"] as? Dictionary<String, AnyObject> {
-                        self.btcPrices["EUR"] = eur["rate_float"]! as? Double
-                    }
-                    if let gbp = bpi["GBP"] as? Dictionary<String, AnyObject> {
-                        self.btcPrices["GBP"] = gbp["rate_float"]! as? Double
-                    }
+                if let bitcoingold = dict["bitcoin-gold"] as? Dictionary<String, AnyObject> {
+                    self.btcPrices["USD"] = bitcoingold["usd"] as? Double
+                    self.btcPrices["GBP"] = bitcoingold["gbp"] as? Double
+                    self.btcPrices["EUR"] = bitcoingold["eur"] as? Double
                 }
             }
         }
@@ -272,20 +263,14 @@ class btcVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             return
         }
         btcPrices = [:]
-        let url = URL(string: "https://api.coindesk.com/v1/bpi/currentprice.json")!
+        let url = URL(string: "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin-gold&vs_currencies=usd,gbp,eur")!
         Alamofire.request(url).responseJSON { response in
             
             if let dict = response.value as? Dictionary<String, AnyObject> {
-                if let bpi = dict["bpi"] as? Dictionary<String, AnyObject> {
-                    if let usd = bpi["USD"] as? Dictionary<String, AnyObject> {
-                        self.btcPrices["USD"] = usd["rate_float"] as? Double
-                    }
-                    if let eur = bpi["EUR"] as? Dictionary<String, AnyObject> {
-                        self.btcPrices["EUR"] = eur["rate_float"]! as? Double
-                    }
-                    if let gbp = bpi["GBP"] as? Dictionary<String, AnyObject> {
-                        self.btcPrices["GBP"] = gbp["rate_float"]! as? Double
-                    }
+                if let bitcoingold = dict["bitcoin-gold"] as? Dictionary<String, AnyObject> {
+                    self.btcPrices["USD"] = bitcoingold["usd"] as? Double
+                    self.btcPrices["GBP"] = bitcoingold["gbp"] as? Double
+                    self.btcPrices["EUR"] = bitcoingold["eur"] as? Double
                 }
             }
         }
@@ -337,7 +322,7 @@ class btcVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         btcChart.highlightValue(x: Double(chartLength), dataSetIndex: 0)
     }
     
-
+    
     func hexStringToUIColor (hex:String) -> UIColor {
         var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
         
@@ -382,7 +367,7 @@ class btcVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     /* Protocol functions */
     
-
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
